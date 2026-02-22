@@ -1,0 +1,26 @@
+---
+import AboutCta from "@/components/sections/about/AboutCta.astro";
+import AboutHero from "@/components/sections/about/AboutHero.astro";
+import HowWeGotHere from "@/components/sections/about/HowWeGotHere.astro";
+import OurStory from "@/components/sections/about/OurStory.astro";
+import OurTeam from "@/components/sections/about/OurTeam.astro";
+import WhatWeBelieve from "@/components/sections/about/WhatWeBelieve.astro";
+import WhereWeWork from "@/components/sections/about/WhereWeWork.astro";
+import WhyNumber6 from "@/components/sections/about/WhyNumber6.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="About Us — number6.ai"
+  description="Two people, two continents, one mission: practical AI consulting that actually works. Meet the team behind number6.ai."
+>
+  <AboutHero />
+  <OurStory />
+  <div class="h-px w-full bg-foreground"></div>
+  <WhatWeBelieve />
+  <OurTeam />
+  <WhyNumber6 />
+  <WhereWeWork />
+  <HowWeGotHere />
+  <AboutCta />
+</BaseLayout>

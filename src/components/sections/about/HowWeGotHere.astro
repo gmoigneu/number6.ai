@@ -1,0 +1,45 @@
+---
+const timeline = [
+	{
+		year: "2020–2024",
+		description:
+			"Both partners build deep AI expertise through hands-on work: production deployments, research, developer advocacy, and hundreds of hours of real-world AI training and consulting.",
+		border: true,
+	},
+	{
+		year: "2025",
+		description:
+			'The AI adoption gap becomes impossible to ignore. Businesses need help, but the market offers either overpriced enterprise consultancies or under-qualified "AI gurus." We decide to fix that.',
+		border: true,
+	},
+	{
+		year: "2026",
+		description:
+			"number6.ai launches. Two people, two continents, one mission: practical AI consulting that actually works.",
+		border: false,
+	},
+];
+---
+
+<section class="flex flex-col gap-12 bg-foreground px-16 py-20 w-full">
+  <div class="flex flex-col items-center gap-4 w-full">
+    <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">HOW WE GOT HERE</span>
+    <h2 class="font-heading text-[40px] font-bold text-background text-center tracking-[-1.5px]">
+      A brief timeline.
+    </h2>
+  </div>
+
+  <div class="flex w-full">
+    {timeline.map((item, i) => (
+      <div class:list={[
+        "flex flex-col gap-4 flex-1 py-8",
+        i === 0 && "pr-8 border-r border-border",
+        i === 1 && "px-8 border-r border-border",
+        i === 2 && "pl-8",
+      ]}>
+        <span class="font-heading text-[32px] font-bold text-accent tracking-[-1px]">{item.year}</span>
+        <p class="font-body text-sm text-secondary-foreground leading-[1.7]">{item.description}</p>
+      </div>
+    ))}
+  </div>
+</section>

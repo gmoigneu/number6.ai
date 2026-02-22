@@ -1,0 +1,47 @@
+---
+const principles = [
+	{
+		title: "Honesty over sales.",
+		description:
+			"If AI isn't the right solution for your problem, we'll tell you. We'd rather lose a deal than sell you something that doesn't work. Counterintuitively, this is also why clients trust us enough to come back for more.",
+	},
+	{
+		title: "Results over impressions.",
+		description:
+			"We don't measure success by how sophisticated the technology is. We measure it by hours saved, revenue gained, and teams that actually use what we built. If it doesn't move the needle, it doesn't matter.",
+	},
+	{
+		title: "Teaching over dependency.",
+		description:
+			"Every engagement includes training. Every project leaves your team more capable than before. Our goal is for you to need us less over time — not more. We consider it a success when you outgrow us.",
+	},
+	{
+		title: "Transparency over mystery.",
+		description:
+			"Our prices are published. Our process is documented. Our recommendations are explained in plain language. We believe you deserve to understand what you're buying and why.",
+	},
+	{
+		title: "People over technology.",
+		description:
+			"AI is a tool. Your people are the strategy. We design every solution around the humans who'll use it — their workflows, their comfort level, their daily reality. The best AI in the world is worthless if the team doesn't trust it.",
+	},
+];
+---
+
+<section class="flex flex-col gap-12 bg-foreground px-16 py-20 w-full">
+  <div class="flex flex-col items-center gap-4 w-full">
+    <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">WHAT WE BELIEVE</span>
+    <h2 class="font-heading text-[40px] font-bold text-background text-center tracking-[-1.5px]">
+      Our principles. Non-negotiable.
+    </h2>
+  </div>
+
+  <div class="flex flex-col w-full">
+    {principles.map((p) => (
+      <div class="flex gap-8 py-8 border-t border-border w-full">
+        <span class="font-heading text-[22px] font-bold text-accent w-[320px] shrink-0">{p.title}</span>
+        <p class="font-body text-base text-secondary-foreground leading-[1.7] flex-1">{p.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
