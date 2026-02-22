@@ -1,0 +1,123 @@
+---
+const services = [
+	{
+		title: "AI Kickstart",
+		subtitle: "HALF-DAY WORKSHOP",
+		desc: "Your team walks in confused about AI. They walk out knowing exactly what it can do for their work — and what it can't. Hands-on exercises with real AI tools.",
+		includes: [
+			"3.5-hour interactive session (up to 15 people)",
+			"Live demos with tools relevant to your business",
+			"Hands-on exercises on actual work",
+			"Post-workshop resource pack",
+			"30-day email support",
+		],
+		bestFor:
+			"Leadership teams, department heads, companies exploring AI for the first time.",
+		price: "$2,500",
+		priceSub: "",
+	},
+	{
+		title: "AI Foundations",
+		subtitle: "FULL-DAY INTENSIVE",
+		desc: "Everything in the Kickstart, plus advanced sessions on prompt engineering, AI tool selection, and workflow integration. Your team leaves with a personalized AI toolkit.",
+		includes: [
+			"Full day (7 hours) for up to 20 participants",
+			"Advanced prompt engineering session",
+			"AI tool landscape walkthrough",
+			"Role-specific breakout sessions",
+			"Custom AI playbook for your team",
+			"60-day email support",
+		],
+		bestFor: "Companies that want their whole team AI-literate, fast.",
+		price: "$5,000",
+		priceSub: "",
+	},
+	{
+		title: "AI Coaching",
+		subtitle: "1-ON-1 EXECUTIVE SESSIONS",
+		desc: "Private sessions tailored to you — your role, your industry, your questions. Learn to use AI as a thinking partner, a productivity multiplier, and a strategic tool.",
+		includes: [
+			"4 x 90-minute private sessions (4-6 weeks)",
+			"Custom curriculum for your role",
+			"Between-session assignments",
+			"Personal tool setup & optimization",
+			"Direct messaging access throughout",
+		],
+		bestFor: "CEOs, founders, C-suite executives, department heads.",
+		price: "$3,000",
+		priceSub: "4-session package  ·  Single: $900  ·  8-pack: $5,500",
+	},
+	{
+		title: "Team Training",
+		subtitle: "4-WEEK COHORT COURSE",
+		desc: "A comprehensive 4-week program in weekly 2-hour sessions plus async materials. Your team progresses from AI basics through advanced tool usage to building their own AI workflows.",
+		includes: [
+			"4 x 2-hour live sessions, one per week",
+			"Fundamentals → Tools → Prompting → Workflows",
+			"Async materials, video replays, exercises",
+			"Private group channel for Q&A",
+			"Individual certificates of completion",
+		],
+		bestFor: "Organizations wanting deep, lasting AI literacy across a team.",
+		price: "$8,000",
+		priceSub: "Up to 15 participants  ·  +$400 each (max 25)",
+	},
+];
+---
+
+<section class="flex flex-col gap-12 bg-foreground px-16 py-20 w-full">
+  <!-- Header -->
+  <div class="flex items-end justify-between w-full">
+    <div class="flex flex-col gap-3">
+      <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">TRACK 01</span>
+      <span class="font-heading text-[64px] font-bold text-primary-foreground tracking-[-2px] leading-none">LEARN</span>
+    </div>
+    <p class="font-body text-base text-secondary-foreground leading-relaxed max-w-[400px]">
+      For teams that want to understand<br />AI before they invest in it.
+    </p>
+  </div>
+
+  <!-- Divider -->
+  <div class="h-px w-full bg-border"></div>
+
+  <!-- Cards row 1 -->
+  <div class="flex gap-5 w-full">
+    {services.slice(0, 2).map((svc) => (
+      <div class="flex flex-col gap-5 p-8 border border-border flex-1">
+        <h3 class="font-heading text-[22px] font-bold text-primary-foreground tracking-[-1px]">{svc.title}</h3>
+        <span class="font-heading text-[10px] font-semibold tracking-[2px] text-accent">{svc.subtitle}</span>
+        <p class="font-body text-[13px] text-secondary-foreground leading-relaxed">{svc.desc}</p>
+        <div class="flex flex-col gap-2">
+          <span class="font-heading text-[10px] font-semibold tracking-[1px] text-muted-foreground">INCLUDES</span>
+          <ul class="font-body text-xs text-[#777] leading-relaxed">
+            {svc.includes.map((item) => <li>• {item}</li>)}
+          </ul>
+        </div>
+        <p class="font-body text-xs text-secondary-foreground italic leading-normal">Best for: {svc.bestFor}</p>
+        <span class="font-heading text-[32px] font-bold text-primary-foreground tracking-[-1px]">{svc.price}</span>
+      </div>
+    ))}
+  </div>
+
+  <!-- Cards row 2 -->
+  <div class="flex gap-5 w-full">
+    {services.slice(2, 4).map((svc) => (
+      <div class="flex flex-col gap-5 p-8 border border-border flex-1">
+        <h3 class="font-heading text-[22px] font-bold text-primary-foreground tracking-[-1px]">{svc.title}</h3>
+        <span class="font-heading text-[10px] font-semibold tracking-[2px] text-accent">{svc.subtitle}</span>
+        <p class="font-body text-[13px] text-secondary-foreground leading-relaxed">{svc.desc}</p>
+        <div class="flex flex-col gap-2">
+          <span class="font-heading text-[10px] font-semibold tracking-[1px] text-muted-foreground">INCLUDES</span>
+          <ul class="font-body text-xs text-[#777] leading-relaxed">
+            {svc.includes.map((item) => <li>• {item}</li>)}
+          </ul>
+        </div>
+        <p class="font-body text-xs text-secondary-foreground italic leading-normal">Best for: {svc.bestFor}</p>
+        <div class="flex flex-col gap-1">
+          <span class="font-heading text-[32px] font-bold text-primary-foreground tracking-[-1px]">{svc.price}</span>
+          {svc.priceSub && <span class="font-body text-[11px] text-[#777]">{svc.priceSub}</span>}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

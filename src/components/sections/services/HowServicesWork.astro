@@ -1,0 +1,62 @@
+---
+const tracks = [
+	{
+		num: "01",
+		title: "LEARN",
+		desc: "Understand AI before you invest",
+		price: "From $2,500",
+		dark: true,
+	},
+	{
+		num: "02",
+		title: "PLAN",
+		desc: "Strategy before you spend",
+		price: "From $3,500",
+		dark: false,
+	},
+	{
+		num: "03",
+		title: "BUILD",
+		desc: "Custom AI solutions, deployed",
+		price: "From $10,000",
+		dark: false,
+	},
+	{
+		num: "04",
+		title: "GROW",
+		desc: "Ongoing AI partnership",
+		price: "From $2,000/mo",
+		dark: false,
+	},
+];
+---
+
+<section class="flex flex-col items-center gap-12 px-16 py-20 w-full">
+  <h2 class="font-heading text-[40px] font-bold text-foreground text-center tracking-[-2px]">
+    Four tracks. One clear path.
+  </h2>
+
+  <p class="font-body text-base text-muted-foreground text-center leading-relaxed max-w-[700px]">
+    We've organized everything we do into four tracks: Learn, Plan, Build, and Grow. Most clients start with Learn or Plan, then progress naturally. Every engagement includes direct access to our senior team.
+  </p>
+
+  <div class="flex w-full">
+    {tracks.map((t) => (
+      <div class:list={[
+        "flex flex-col gap-3 py-8 px-7 flex-1",
+        t.dark ? "bg-foreground" : "border border-foreground",
+      ]}>
+        <span class="font-heading text-4xl font-bold text-accent tracking-[-1px]">{t.num}</span>
+        <span class:list={[
+          "font-heading text-lg font-bold tracking-[1px]",
+          t.dark ? "text-primary-foreground" : "text-foreground",
+        ]}>{t.title}</span>
+        <p class:list={[
+          "font-body text-[13px] leading-normal flex-1",
+          t.dark ? "text-secondary-foreground" : "text-muted-foreground",
+        ]}>{t.desc}</p>
+        <span class="font-heading text-sm font-semibold text-accent">{t.price}</span>
+      </div>
+    ))}
+  </div>
+</section>

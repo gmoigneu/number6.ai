@@ -1,0 +1,81 @@
+---
+const services = [
+	{
+		title: "Advisory Retainer",
+		subtitle: "ESSENTIALS",
+		desc: "Your fractional AI advisor on speed dial. Regular meetings, troubleshooting, tool evaluations, and strategy updates. Like having a Chief AI Officer without the $300K+ salary.",
+		includes: [
+			"2 advisory sessions/month",
+			"Priority email support (24hr)",
+			"Monthly AI opportunity brief",
+			"Quarterly strategy review",
+			"Monthly team office hours",
+		],
+		price: "$3,000/mo",
+		priceSub: "Min 3-month commitment",
+	},
+	{
+		title: "Advisory Retainer",
+		subtitle: "GROWTH",
+		desc: "Everything in Essentials, plus hands-on involvement — architecture reviews, implementation guidance, training delivery, and vendor management.",
+		includes: [
+			"4 advisory sessions/month",
+			"Up to 8 hrs hands-on work/month",
+			"Quarterly half-day workshop",
+			"Priority project scoping",
+			"Dedicated Slack channel",
+		],
+		price: "$6,000/mo",
+		priceSub: "Min 3-month commitment",
+	},
+	{
+		title: "Managed AI Services",
+		subtitle: "ONGOING SYSTEM MANAGEMENT",
+		desc: "We keep your AI systems running, optimized, and current. Monitoring, knowledge base updates, model retraining, infrastructure management, and incident response.",
+		includes: [
+			"Ongoing system monitoring",
+			"Monthly performance reports",
+			"Knowledge base maintenance",
+			"Prompt optimization",
+			"Infrastructure cost optimization",
+			"Quarterly improvement review",
+		],
+		price: "$2,000 – $5,000/mo",
+		priceSub: "Scoped individually",
+	},
+];
+---
+
+<section class="flex flex-col gap-12 px-16 py-20 w-full">
+  <!-- Header -->
+  <div class="flex items-end justify-between w-full">
+    <div class="flex flex-col gap-3">
+      <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">TRACK 04</span>
+      <span class="font-heading text-[64px] font-bold text-foreground tracking-[-2px] leading-none">GROW</span>
+    </div>
+    <p class="font-body text-base text-muted-foreground leading-relaxed max-w-[400px]">
+      For businesses that want ongoing<br />AI partnership.
+    </p>
+  </div>
+
+  <!-- Divider -->
+  <div class="h-1 w-full bg-foreground"></div>
+
+  <!-- Cards row -->
+  <div class="flex gap-5 w-full">
+    {services.map((svc) => (
+      <div class="flex flex-col gap-5 p-8 border-2 border-foreground flex-1">
+        <h3 class="font-heading text-[22px] font-bold text-foreground tracking-[-1px]">{svc.title}</h3>
+        <span class="font-heading text-[10px] font-semibold tracking-[2px] text-accent">{svc.subtitle}</span>
+        <p class="font-body text-[13px] text-muted-foreground leading-relaxed">{svc.desc}</p>
+        <ul class="font-body text-xs text-muted-foreground leading-relaxed">
+          {svc.includes.map((item) => <li>• {item}</li>)}
+        </ul>
+        <div class="flex flex-col gap-1 mt-auto">
+          <span class="font-heading text-[28px] font-bold text-foreground tracking-[-1px]">{svc.price}</span>
+          <span class="font-body text-[11px] text-muted-foreground">{svc.priceSub}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

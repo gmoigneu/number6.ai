@@ -1,0 +1,106 @@
+---
+const topCards = [
+	{
+		title: "AI Readiness Index™",
+		subtitle: "QUICK ASSESSMENT",
+		desc: "In one week, we assess your business across Strategy, Data, People, Process, Technology, and Governance — and give you a clear picture of where you stand and where to start.",
+		includes: [
+			"Structured intake questionnaire",
+			"90-minute leadership interview",
+			"Assessment across all 6 dimensions",
+			"Scored readiness report with dashboard",
+			"Top 5 prioritized AI opportunities",
+			"60-minute review call",
+			"Board-ready executive summary",
+		],
+		bestFor: "Businesses that want to know where they stand before committing.",
+		price: "$3,500",
+		priceSub: "",
+	},
+	{
+		title: "AI Strategy & Roadmap",
+		subtitle: "COMPREHENSIVE STRATEGY",
+		desc: "Over 3-4 weeks, we audit your operations, interview stakeholders, analyze your data landscape, and deliver a phased AI roadmap with business cases and tool recommendations.",
+		includes: [
+			"Full AI Readiness Index assessment",
+			"Stakeholder interviews (up to 8 people)",
+			"Workflow analysis & automation mapping",
+			"Phased 12-month roadmap",
+			"Business cases for top 3 initiatives",
+			"Vendor-neutral tool recommendations",
+			"AI governance & risk assessment",
+			"90-day advisory access",
+		],
+		bestFor:
+			"Companies ready to commit to AI adoption with an evidence-based plan.",
+		price: "$12,000 – $18,000",
+		priceSub: "Scope confirmed after discovery call",
+	},
+];
+---
+
+<section class="flex flex-col gap-12 px-16 py-20 w-full">
+  <!-- Header -->
+  <div class="flex items-end justify-between w-full">
+    <div class="flex flex-col gap-3">
+      <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">TRACK 02</span>
+      <span class="font-heading text-[64px] font-bold text-foreground tracking-[-2px] leading-none">PLAN</span>
+    </div>
+    <p class="font-body text-base text-muted-foreground leading-relaxed max-w-[400px]">
+      For businesses that want a strategy<br />before they spend.
+    </p>
+  </div>
+
+  <!-- Divider -->
+  <div class="h-1 w-full bg-foreground"></div>
+
+  <!-- Top cards -->
+  <div class="flex gap-5 w-full">
+    {topCards.map((svc) => (
+      <div class="flex flex-col gap-5 p-8 border-2 border-foreground flex-1">
+        <h3 class="font-heading text-[22px] font-bold text-foreground tracking-[-1px]">{svc.title}</h3>
+        <span class="font-heading text-[10px] font-semibold tracking-[2px] text-accent">{svc.subtitle}</span>
+        <p class="font-body text-[13px] text-muted-foreground leading-relaxed">{svc.desc}</p>
+        <div class="flex flex-col gap-2">
+          <span class="font-heading text-[10px] font-semibold tracking-[1px] text-muted-foreground">INCLUDES</span>
+          <ul class="font-body text-xs text-muted-foreground leading-relaxed">
+            {svc.includes.map((item) => <li>• {item}</li>)}
+          </ul>
+        </div>
+        <p class="font-body text-xs text-muted-foreground italic leading-normal">Best for: {svc.bestFor}</p>
+        <div class="flex flex-col gap-1">
+          <span class="font-heading text-[28px] font-bold text-foreground tracking-[-1px]">{svc.price}</span>
+          {svc.priceSub && <span class="font-body text-[11px] text-muted-foreground">{svc.priceSub}</span>}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Wide bottom card: AI Workflow Audit -->
+  <div class="flex gap-16 p-10 border-2 border-foreground w-full">
+    <div class="flex flex-col gap-5 flex-1">
+      <h3 class="font-heading text-[22px] font-bold text-foreground tracking-[-1px]">AI Workflow Audit</h3>
+      <span class="font-heading text-[10px] font-semibold tracking-[2px] text-accent">DEPARTMENT DEEP-DIVE</span>
+      <p class="font-body text-[13px] text-muted-foreground leading-relaxed">
+        Not ready for a full strategy? We'll take one department or process, map every workflow, identify AI opportunities, and deliver a detailed implementation plan with tool recommendations and projected time savings.
+      </p>
+      <p class="font-body text-xs text-muted-foreground italic leading-normal">
+        Best for: Operations leaders or companies that want to start with one area before going company-wide.
+      </p>
+    </div>
+    <div class="flex flex-col gap-4 w-[350px] shrink-0">
+      <div class="flex flex-col gap-2">
+        <span class="font-heading text-[10px] font-semibold tracking-[1px] text-muted-foreground">INCLUDES</span>
+        <ul class="font-body text-xs text-muted-foreground leading-relaxed">
+          <li>• 2-3 week focused engagement</li>
+          <li>• Stakeholder interviews (up to 5)</li>
+          <li>• Detailed workflow mapping</li>
+          <li>• Tool recommendations</li>
+          <li>• Time & cost savings projections</li>
+          <li>• Week-by-week implementation plan</li>
+        </ul>
+      </div>
+      <span class="font-heading text-[28px] font-bold text-foreground tracking-[-1px]">$6,000 – $9,000</span>
+    </div>
+  </div>
+</section>

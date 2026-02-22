@@ -1,0 +1,81 @@
+---
+const bundles = [
+	{
+		title: "THE STARTER",
+		desc: "For companies just beginning with AI",
+		items:
+			"1. AI Readiness Index — $3,500\n2. AI Kickstart Workshop — $2,500\n3. AI Workflow Audit — $6,000",
+		oldPrice: "$12,000",
+		newPrice: "$10,500",
+		savings: "SAVE $1,500",
+		dark: false,
+		saveBadgeDark: true,
+	},
+	{
+		title: "THE BUILDER",
+		desc: "For companies ready to implement",
+		items:
+			"1. AI Strategy & Roadmap — $15,000\n2. AI Pilot Project — $15,000\n3. AI Foundations Workshop — $5,000",
+		oldPrice: "$35,000",
+		newPrice: "$30,000",
+		savings: "SAVE $5,000",
+		dark: true,
+		saveBadgeDark: false,
+	},
+	{
+		title: "THE ALL-IN",
+		desc: "For companies going deep on AI",
+		items:
+			"1. AI Strategy & Roadmap — $15,000\n2. Custom AI Agent — $25,000\n3. Team Training (cohort) — $8,000\n4. Advisory Retainer (3 mo) — $9,000",
+		oldPrice: "$57,000",
+		newPrice: "$48,000",
+		savings: "SAVE $9,000",
+		dark: false,
+		saveBadgeDark: true,
+	},
+];
+---
+
+<section class="flex flex-col items-center gap-12 bg-muted px-16 py-20 w-full">
+  <div class="flex flex-col items-center gap-4">
+    <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">COMMON JOURNEYS</span>
+    <h2 class="font-heading text-5xl font-bold text-foreground text-center tracking-[-2px]">
+      Save when you bundle.
+    </h2>
+  </div>
+
+  <div class="flex gap-5 w-full">
+    {bundles.map((b) => (
+      <div class:list={[
+        "flex flex-col gap-5 p-8 border-2 border-foreground flex-1",
+        b.dark ? "bg-foreground" : "bg-background",
+      ]}>
+        <h3 class:list={[
+          "font-heading text-xl font-bold tracking-[1px]",
+          b.dark ? "text-primary-foreground" : "text-foreground",
+        ]}>{b.title}</h3>
+        <p class:list={[
+          "font-body text-[13px] leading-normal",
+          b.dark ? "text-secondary-foreground" : "text-muted-foreground",
+        ]}>{b.desc}</p>
+        <p class:list={[
+          "font-body text-[13px] leading-[1.7] whitespace-pre-line",
+          b.dark ? "text-primary-foreground" : "text-foreground",
+        ]}>{b.items}</p>
+        <div class="flex items-end gap-4">
+          <span class:list={[
+            "font-heading text-lg font-semibold line-through",
+            b.dark ? "text-[#777]" : "text-muted-foreground",
+          ]}>{b.oldPrice}</span>
+          <span class="font-heading text-[32px] font-bold text-accent tracking-[-1px]">{b.newPrice}</span>
+        </div>
+        <div class:list={[
+          "inline-flex self-start px-3.5 py-1.5",
+          b.saveBadgeDark ? "bg-foreground" : "bg-accent",
+        ]}>
+          <span class="font-heading text-[11px] font-semibold tracking-[1px] text-primary-foreground">{b.savings}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

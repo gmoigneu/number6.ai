@@ -1,0 +1,62 @@
+---
+const col1 = [
+	{
+		title: "Free discovery call",
+		desc: "Every engagement starts with a free 30-minute call. No pitch. No pressure.",
+	},
+	{
+		title: "All prices in USD",
+		desc: "UK and European clients: we invoice in GBP or EUR at equivalent rates, adjusted quarterly.",
+	},
+	{
+		title: "Payment terms",
+		desc: "Under $10K: 100% upfront. $10K-$25K: 50/50. Over $25K: 40/30/30 milestone-based. Retainers: monthly.",
+	},
+];
+
+const col2 = [
+	{
+		title: "Travel",
+		desc: "Virtual delivery is standard. In-person in Houston and Manchester metro areas at no extra cost. Other locations quoted separately.",
+	},
+	{
+		title: "What's not included",
+		desc: "Third-party software licenses (we recommend, you subscribe). API costs for LLM usage (typically $50-$500/month). All costs discussed transparently.",
+	},
+	{
+		title: "Satisfaction guarantee",
+		desc: "Not satisfied with a workshop or assessment? We'll redo it at no charge or refund your payment. For larger projects, satisfaction checkpoints are built in.",
+	},
+];
+---
+
+<section class="flex flex-col gap-12 px-16 py-20 w-full">
+  <!-- Header -->
+  <div class="flex flex-col gap-3">
+    <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">GOOD TO KNOW</span>
+    <h2 class="font-heading text-[40px] font-bold text-foreground tracking-[-2px]">Pricing notes.</h2>
+  </div>
+
+  <!-- Divider -->
+  <div class="h-0.5 w-full bg-foreground"></div>
+
+  <!-- Two-column grid -->
+  <div class="grid grid-cols-2 gap-12 w-full">
+    <div class="flex flex-col gap-8">
+      {col1.map((note) => (
+        <div class="flex flex-col gap-2">
+          <h3 class="font-heading text-base font-bold text-foreground">{note.title}</h3>
+          <p class="font-body text-sm text-muted-foreground leading-relaxed">{note.desc}</p>
+        </div>
+      ))}
+    </div>
+    <div class="flex flex-col gap-8">
+      {col2.map((note) => (
+        <div class="flex flex-col gap-2">
+          <h3 class="font-heading text-base font-bold text-foreground">{note.title}</h3>
+          <p class="font-body text-sm text-muted-foreground leading-relaxed">{note.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

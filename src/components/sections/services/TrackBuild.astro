@@ -1,0 +1,104 @@
+---
+const services = [
+	{
+		title: "AI Pilot Project",
+		subtitle: "ONE FOCUSED AI SOLUTION",
+		desc: "We take one high-impact AI use case and build it end-to-end. This is a working solution, not a prototype — deployed in your environment, integrated with your tools, and your team trained to use it.",
+		examples:
+			"Intelligent document processor · Customer service AI · Automated report generator · AI lead scoring · Meeting summarizer",
+		includes: [
+			"Use case definition workshop",
+			"Solution design & architecture",
+			"Development & testing (4-8 weeks)",
+			"Integration with existing tools",
+			"Team training on the solution",
+			"30-day post-launch support",
+			"Full documentation",
+		],
+		bestFor:
+			"Companies with a clear use case who want to see AI deliver real value fast.",
+		price: "$10,000 – $20,000",
+	},
+	{
+		title: "Custom AI Agent",
+		subtitle: "PURPOSE-BUILT AI WITH MEMORY & CONTEXT",
+		desc: "We build custom AI agents that can remember past interactions, access your knowledge base, use tools and APIs, and complete complex multi-step tasks. These aren't chatbots — they're intelligent digital workers.",
+		examples:
+			"Internal knowledge agent · Customer-facing agent · Operations monitor · Research agent · Sales preparation agent",
+		includes: [
+			"Agent design workshop",
+			"Architecture design (LLM, memory, tools)",
+			"Knowledge base setup",
+			"Comprehensive testing",
+			"Guardrails & safety systems",
+			"60-day post-launch support",
+			"Performance monitoring dashboard",
+			"Full technical documentation",
+		],
+		bestFor:
+			"Companies that want to automate complex knowledge work, not just simple tasks.",
+		price: "$18,000 – $35,000",
+	},
+	{
+		title: "RAG Knowledge System",
+		subtitle: "ENTERPRISE-GRADE KNOWLEDGE RETRIEVAL",
+		desc: "We make your entire organizational knowledge — documents, databases, emails, wikis, Slack history — searchable through natural language. Your team asks questions; the system finds answers from your own data, with citations.",
+		examples: "",
+		includes: [
+			"Data audit & source identification",
+			"Document ingestion pipeline",
+			"Vector database setup",
+			"LLM integration with citations",
+			"Web-based user interface",
+			"Access control & security",
+			"Admin dashboard",
+			"90-day post-launch support",
+		],
+		bestFor:
+			"Organizations with significant internal knowledge that's hard to find or locked in people's heads.",
+		price: "$35,000 – $50,000",
+	},
+];
+---
+
+<section class="flex flex-col gap-12 bg-foreground px-16 py-20 w-full">
+  <!-- Header -->
+  <div class="flex items-end justify-between w-full">
+    <div class="flex flex-col gap-3">
+      <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">TRACK 03</span>
+      <span class="font-heading text-[64px] font-bold text-primary-foreground tracking-[-2px] leading-none">BUILD</span>
+    </div>
+    <p class="font-body text-base text-secondary-foreground leading-relaxed max-w-[400px]">
+      For businesses ready to create<br />custom AI solutions.
+    </p>
+  </div>
+
+  <!-- Divider -->
+  <div class="h-px w-full bg-border"></div>
+
+  <!-- Service cards -->
+  <div class="flex flex-col gap-5 w-full">
+    {services.map((svc) => (
+      <div class="flex gap-16 p-10 border border-border w-full">
+        <div class="flex flex-col gap-5 flex-1">
+          <h3 class="font-heading text-2xl font-bold text-primary-foreground tracking-[-1px]">{svc.title}</h3>
+          <span class="font-heading text-[10px] font-semibold tracking-[2px] text-accent">{svc.subtitle}</span>
+          <p class="font-body text-[13px] text-secondary-foreground leading-relaxed">{svc.desc}</p>
+          {svc.examples && (
+            <p class="font-body text-xs text-[#777] leading-normal">Examples: {svc.examples}</p>
+          )}
+          <p class="font-body text-xs text-secondary-foreground italic leading-normal">Best for: {svc.bestFor}</p>
+        </div>
+        <div class="flex flex-col gap-4 w-[350px] shrink-0">
+          <div class="flex flex-col gap-2">
+            <span class="font-heading text-[10px] font-semibold tracking-[1px] text-muted-foreground">INCLUDES</span>
+            <ul class="font-body text-xs text-[#777] leading-relaxed">
+              {svc.includes.map((item) => <li>• {item}</li>)}
+            </ul>
+          </div>
+          <span class="font-heading text-[28px] font-bold text-primary-foreground tracking-[-1px]">{svc.price}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
