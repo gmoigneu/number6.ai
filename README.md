@@ -1,43 +1,36 @@
-# Astro Starter Kit: Minimal
+# number6.ai
+
+Marketing website for Number 6, an AI agency. Built with Astro 5 and React, deployed as a static site.
+
+## Setup
 
 ```sh
-pnpm create astro@latest -- --template minimal
+pnpm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Development
 
-## 🚀 Project Structure
+With portless (preferred):
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+portless number6 pnpm dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+This makes the site available at `http://number6.localhost:1355`.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Without portless:
 
-Any static assets, like images, can be placed in the `public/` directory.
+```sh
+pnpm dev
+```
 
-## 🧞 Commands
+Available at `http://localhost:4321`.
 
-All commands are run from the root of the project, from a terminal:
+## Commands
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Command        | Action                                    |
+| :------------- | :---------------------------------------- |
+| `pnpm dev`     | Start dev server                          |
+| `pnpm build`   | Build production site to `./dist/`        |
+| `pnpm preview` | Preview production build locally          |
+| `pnpm astro …` | Run CLI commands like `astro add`, `check` |
