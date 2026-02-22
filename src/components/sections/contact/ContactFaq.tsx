@@ -16,7 +16,7 @@ const FAQ_ITEMS = [
 	{
 		question: "Do you work with companies outside the US and UK?",
 		answer:
-			"Yes. While we're based in Houston and Manchester, most of our work is delivered virtually. We've worked with clients across North America, Europe, and beyond. Timezone compatibility matters more than geography.",
+			"Yes. While we're based in Houston and Manchester, most of our work is delivered virtually. We've worked with clients across North America and Europe. Timezone compatibility matters more than geography.",
 	},
 	{
 		question: "How quickly can you start?",

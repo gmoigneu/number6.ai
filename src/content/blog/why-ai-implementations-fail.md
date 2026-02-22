@@ -22,7 +22,7 @@ This sounds obvious. It isn't. The most common failure mode we see is a company 
 
 When you start with the technology, you end up with a solution looking for a problem. You build a chatbot because chatbots are cool, not because your customers actually want to talk to a bot. You implement document summarization because GPT-4 can do it, not because anyone was struggling with long documents.
 
-> The companies that succeed with AI aren't the ones with the biggest budgets or the most advanced technology. They're the ones that start with a specific, measurable problem and work backwards.
+> The biggest budget doesn't win. The companies that succeed with AI start with a specific, measurable problem and work backwards from there.
 
 ### What a good problem statement looks like
 
@@ -58,18 +58,18 @@ metrics = {
 }
 ```
 
-The key insight is that you need to define your baseline before you start. Most companies skip this step. They implement the AI, see that it "works," and call it a success. But without a baseline, you have no idea whether it's actually better than what you had before.
+The point is simple: you need to define your baseline before you start. Most companies skip this step. They implement the AI, see that it "works," and call it a success. But without a baseline, you have no idea whether it's actually better than what you had before.
 
 ---
 
 ## Pattern 3: Build for humans, not for demos
 
-The final pattern is perhaps the most important, and the most frequently ignored. An AI implementation succeeds or fails based on whether the people who are supposed to use it actually want to use it.
+This one gets ignored constantly. An AI implementation succeeds or fails based on whether the people who are supposed to use it actually want to use it.
 
 This means involving your team early. Not just in testing, but in design. The people doing the work know the work better than anyone. They know which parts are genuinely painful, which shortcuts they've already built, and which "improvements" will actually slow them down.
 
 We've seen brilliant AI solutions get abandoned because nobody asked the end users what they actually needed. Don't be that company.
 
-None of these patterns are revolutionary. That's the point. Successful AI implementation isn't about finding some secret technique that nobody else knows. It's about doing the boring fundamentals well: define the problem, measure the results, and build for the people who'll actually use it.
+None of these patterns are revolutionary. That's the point. Successful AI implementation is about doing the boring fundamentals well: define the problem, measure the results, build for the people who'll actually use it.
 
-**The companies winning with AI aren't the ones making the biggest bets. They're the ones making the smartest small ones.**
+**The smartest AI bets are almost always small ones.**
