@@ -1,0 +1,17 @@
+---
+import ContactForm from "./ContactForm";
+---
+
+<section id="contact-form" class="flex flex-col items-center gap-8 bg-foreground px-16 py-[100px] w-full">
+  <div class="flex flex-col items-center gap-4 w-full">
+    <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">SEND US A MESSAGE</span>
+    <h2 class="font-heading text-[40px] font-bold text-primary-foreground text-center leading-[1.1] tracking-[-1.5px]">
+      We're great readers.
+    </h2>
+    <p class="font-body text-base text-secondary-foreground text-center leading-[1.6] max-w-[600px]">
+      Tell us what's on your mind. A challenge you're facing, a question about AI, a project idea — we read every message and respond personally.
+    </p>
+  </div>
+
+  <ContactForm client:visible />
+</section>

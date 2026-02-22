@@ -1,0 +1,52 @@
+---
+import { ArrowDown, ArrowRight, AtSign, Mail, Video } from "lucide-react";
+---
+
+<section class="flex flex-col items-center gap-12 bg-background px-16 pb-[100px] w-full">
+  <h2 class="font-heading text-[40px] font-bold text-foreground text-center leading-[1.1] tracking-[-1.5px]">
+    Three ways to get started.
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+    <!-- Discovery Call Card (dark) -->
+    <div class="flex flex-col gap-6 bg-foreground p-10">
+      <Video className="h-8 w-8 text-accent" />
+      <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">THE BEST WAY TO START</span>
+      <h3 class="font-heading text-2xl font-bold text-primary-foreground tracking-[-0.5px]">Book a Discovery Call</h3>
+      <p class="font-body text-sm text-secondary-foreground leading-[1.7]">
+        30 minutes, completely free. We'll listen to where you are, share what we've seen work, and give you an honest take on what AI can (and can't) do for your business.
+      </p>
+      <a href="/contact" class="flex items-center gap-3 bg-accent px-7 py-[14px] font-heading text-xs font-semibold tracking-[1px] text-accent-foreground hover:bg-accent/90 transition-colors w-fit mt-auto">
+        BOOK YOUR FREE CALL
+        <ArrowRight className="h-4 w-4" />
+      </a>
+    </div>
+
+    <!-- Send Message Card (light) -->
+    <div class="flex flex-col gap-6 border-2 border-foreground p-10">
+      <Mail className="h-8 w-8 text-foreground" />
+      <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">PREFER TO WRITE?</span>
+      <h3 class="font-heading text-2xl font-bold text-foreground tracking-[-0.5px]">Send Us a Message</h3>
+      <p class="font-body text-sm text-muted-foreground leading-[1.7]">
+        Use the form below to tell us what's on your mind. We typically respond within 24 hours — often much faster.
+      </p>
+      <a href="#contact-form" class="flex items-center gap-3 border-2 border-foreground px-7 py-[14px] font-heading text-xs font-semibold tracking-[1px] text-foreground hover:bg-foreground hover:text-primary-foreground transition-colors w-fit mt-auto">
+        SCROLL TO FORM
+        <ArrowDown className="h-4 w-4" />
+      </a>
+    </div>
+
+    <!-- Email Card (light) -->
+    <div class="flex flex-col gap-6 border-2 border-foreground p-10">
+      <AtSign className="h-8 w-8 text-foreground" />
+      <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">JUST SAY HELLO</span>
+      <h3 class="font-heading text-2xl font-bold text-foreground tracking-[-0.5px]">Email Us Directly</h3>
+      <p class="font-body text-sm text-muted-foreground leading-[1.7]">
+        Sometimes a quick email is all you need. Drop us a line — we read everything and reply to everyone.
+      </p>
+      <a href="mailto:hello@number6.ai" class="font-heading text-xl font-bold text-accent hover:text-accent/80 transition-colors mt-auto">
+        hello@number6.ai
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+import ContactCta from "@/components/sections/contact/ContactCta.astro";
+import ContactFaq from "@/components/sections/contact/ContactFaq";
+import ContactFormSection from "@/components/sections/contact/ContactFormSection.astro";
+import ContactHero from "@/components/sections/contact/ContactHero.astro";
+import ContactLocations from "@/components/sections/contact/ContactLocations.astro";
+import ContactOptions from "@/components/sections/contact/ContactOptions.astro";
+import WhatToExpect from "@/components/sections/contact/WhatToExpect.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Contact Us — number6.ai"
+  description="Get in touch with number6.ai. Book a free discovery call, send us a message, or email us directly."
+>
+  <ContactHero />
+  <ContactOptions />
+  <ContactFormSection />
+  <WhatToExpect />
+  <ContactFaq client:visible />
+  <ContactLocations />
+  <ContactCta />
+</BaseLayout>
