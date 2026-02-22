@@ -1,0 +1,236 @@
+---
+import LegalLayout from "@/layouts/LegalLayout.astro";
+
+const toc = [
+	{ id: "what-are-cookies", label: "1. What Are Cookies?" },
+	{ id: "how-we-use-cookies", label: "2. How We Use Cookies" },
+	{ id: "third-party-cookies", label: "3. Third-Party Cookies" },
+	{ id: "your-cookie-choices", label: "4. Your Cookie Choices" },
+	{ id: "do-not-track", label: "5. Do Not Track" },
+	{ id: "cookie-retention", label: "6. Cookie Retention" },
+	{ id: "updates-to-this-policy", label: "7. Updates to This Policy" },
+	{ id: "contact-us", label: "8. Contact Us" },
+];
+---
+
+<LegalLayout
+  title="Cookie Policy"
+  lastUpdated="February 22, 2026"
+  breadcrumbLabel="Cookie Policy"
+  toc={toc}
+>
+  <p>
+    This Cookie Policy explains how <strong>nlsio LLC</strong>, operating as <strong>number6.ai</strong> ("we," "us," or "our"), uses cookies and similar tracking technologies on our website at number6.ai ("Site").
+  </p>
+  <p>
+    This policy should be read alongside our <a href="/privacy">Privacy Policy</a>.
+  </p>
+
+  <hr />
+
+  <section id="what-are-cookies">
+    <h2>1. What Are Cookies?</h2>
+    <p>Cookies are small text files placed on your device (computer, tablet, or phone) when you visit a website. They help websites function properly, remember your preferences, and understand how visitors use the site.</p>
+    <p>Similar technologies include pixels, web beacons, local storage, and session storage. In this policy, "cookies" refers to all of these technologies collectively.</p>
+  </section>
+
+  <hr />
+
+  <section id="how-we-use-cookies">
+    <h2>2. How We Use Cookies</h2>
+    <p>We use cookies for the following purposes:</p>
+
+    <p><strong>2.1 Strictly Necessary Cookies</strong></p>
+    <p>These cookies are essential for the Site to function. They cannot be disabled.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Cookie</th>
+          <th>Purpose</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cookie consent preference</td>
+          <td>Remembers your cookie consent choice so we don't ask you repeatedly</td>
+          <td>1 year</td>
+        </tr>
+        <tr>
+          <td>Security cookies</td>
+          <td>Protect against cross-site request forgery and other threats</td>
+          <td>Session</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>2.2 Analytics Cookies</strong></p>
+    <p>These cookies help us understand how visitors interact with the Site — which pages are popular, how people navigate, and where they drop off. This data is aggregated and anonymized; we do not use analytics cookies to identify individual visitors.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Cookie</th>
+          <th>Provider</th>
+          <th>Purpose</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Analytics tracking</td>
+          <td>Google Analytics / Plausible</td>
+          <td>Page views, session duration, traffic sources, device info</td>
+          <td>Up to 26 months</td>
+        </tr>
+      </tbody>
+    </table>
+    <blockquote>
+      <p>We are committed to privacy-respecting analytics. If we use Google Analytics, we enable IP anonymization and disable data sharing with Google for advertising purposes. We may use or switch to privacy-first alternatives like Plausible Analytics, which does not use cookies at all.</p>
+    </blockquote>
+
+    <p><strong>2.3 Functional Cookies</strong></p>
+    <p>These cookies enable enhanced functionality and personalization.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Cookie</th>
+          <th>Purpose</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Scheduling widget</td>
+          <td>Powers the embedded booking/scheduling tool (e.g., Calendly) for discovery calls</td>
+          <td>Session to 1 year</td>
+        </tr>
+        <tr>
+          <td>Form pre-fill</td>
+          <td>Remembers form field entries so you don't have to re-type if you navigate away</td>
+          <td>Session</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>2.4 Marketing Cookies</strong></p>
+    <p>We currently use <strong>minimal or no marketing cookies</strong>. If this changes — for example, if we run advertising campaigns — we will update this policy and request your consent before placing marketing cookies.</p>
+    <p>If enabled in the future, marketing cookies may be used for:</p>
+    <ul>
+      <li>Measuring the effectiveness of advertising campaigns.</li>
+      <li>Retargeting visitors with relevant content on other platforms.</li>
+      <li>Understanding which channels drive the most valuable traffic.</li>
+    </ul>
+    <p>We will never use marketing cookies without your explicit opt-in consent.</p>
+  </section>
+
+  <hr />
+
+  <section id="third-party-cookies">
+    <h2>3. Third-Party Cookies</h2>
+    <p>Some cookies on the Site are placed by third-party services we use. These third parties have their own privacy and cookie policies:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Third Party</th>
+          <th>Purpose</th>
+          <th>Their Privacy Policy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Google Analytics</td>
+          <td>Website analytics</td>
+          <td><a href="https://policies.google.com/privacy">Google Privacy Policy</a></td>
+        </tr>
+        <tr>
+          <td>Calendly</td>
+          <td>Meeting scheduling</td>
+          <td><a href="https://calendly.com/privacy">Calendly Privacy Policy</a></td>
+        </tr>
+        <tr>
+          <td>Stripe</td>
+          <td>Payment processing (if applicable)</td>
+          <td><a href="https://stripe.com/privacy">Stripe Privacy Policy</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>We select third-party providers carefully and require them to handle data responsibly. However, we do not control their cookies — please review their policies for details.</p>
+  </section>
+
+  <hr />
+
+  <section id="your-cookie-choices">
+    <h2>4. Your Cookie Choices</h2>
+
+    <p><strong>4.1 Cookie Consent Banner</strong></p>
+    <p>When you first visit the Site, you will see a cookie consent banner allowing you to:</p>
+    <ul>
+      <li><strong>Accept all cookies</strong> — enables all cookie categories.</li>
+      <li><strong>Accept only necessary cookies</strong> — only strictly necessary cookies are used.</li>
+      <li><strong>Customize your choices</strong> — select which categories to enable or disable.</li>
+    </ul>
+    <p>You can change your preferences at any time by clicking the cookie settings link in the Site footer.</p>
+
+    <p><strong>4.2 Browser Settings</strong></p>
+    <p>Most browsers allow you to control cookies through their settings. You can typically:</p>
+    <ul>
+      <li>View and delete existing cookies.</li>
+      <li>Block all cookies or only third-party cookies.</li>
+      <li>Set preferences for specific websites.</li>
+    </ul>
+    <p>Common browser cookie settings:</p>
+    <ul>
+      <li><strong>Chrome:</strong> Settings &rarr; Privacy and Security &rarr; Cookies</li>
+      <li><strong>Firefox:</strong> Settings &rarr; Privacy &amp; Security &rarr; Cookies and Site Data</li>
+      <li><strong>Safari:</strong> Preferences &rarr; Privacy &rarr; Cookies and Website Data</li>
+      <li><strong>Edge:</strong> Settings &rarr; Privacy, Search, and Services &rarr; Cookies</li>
+    </ul>
+    <p>Note: Blocking all cookies may affect the functionality of the Site and other websites.</p>
+
+    <p><strong>4.3 Analytics Opt-Out</strong></p>
+    <ul>
+      <li><strong>Google Analytics:</strong> Install the <a href="https://tools.google.com/dlpage/gaoptout">Google Analytics Opt-out Browser Add-on</a>.</li>
+      <li><strong>Plausible Analytics:</strong> If we use Plausible, no opt-out is needed — it does not use cookies or track individual visitors.</li>
+    </ul>
+  </section>
+
+  <hr />
+
+  <section id="do-not-track">
+    <h2>5. Do Not Track</h2>
+    <p>Some browsers send a "Do Not Track" (DNT) signal. There is currently no universal standard for how websites should respond to DNT signals. We respect DNT signals by disabling non-essential cookies when detected.</p>
+  </section>
+
+  <hr />
+
+  <section id="cookie-retention">
+    <h2>6. Cookie Retention</h2>
+    <p>Cookies are retained for varying periods as described in the tables above:</p>
+    <ul>
+      <li><strong>Session cookies</strong> are deleted when you close your browser.</li>
+      <li><strong>Persistent cookies</strong> remain on your device for the duration specified (up to 26 months for analytics), unless you delete them earlier through your browser settings or our cookie consent tool.</li>
+    </ul>
+  </section>
+
+  <hr />
+
+  <section id="updates-to-this-policy">
+    <h2>7. Updates to This Policy</h2>
+    <p>We may update this Cookie Policy to reflect changes in our practices or for legal, technical, or business reasons. Changes will be posted on this page with an updated "Last updated" date.</p>
+    <p>For significant changes that expand our use of cookies, we will re-request your consent through the cookie consent banner.</p>
+  </section>
+
+  <hr />
+
+  <section id="contact-us">
+    <h2>8. Contact Us</h2>
+    <p>If you have questions about our use of cookies, please contact us:</p>
+    <ul>
+      <li><strong>Email:</strong> hello@number6.ai</li>
+      <li><strong>Phone:</strong> +1 650 660 6612</li>
+      <li><strong>Entity:</strong> nlsio LLC, Texas, United States</li>
+    </ul>
+  </section>
+</LegalLayout>

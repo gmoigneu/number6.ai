@@ -91,3 +91,104 @@
     @apply bg-background text-foreground font-body;
     }
 }
+
+/* Legal page prose typography */
+.legal-prose h2 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--foreground);
+}
+
+.legal-prose p {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--foreground);
+}
+
+.legal-prose strong {
+  font-weight: 700;
+}
+
+.legal-prose ul,
+.legal-prose ol {
+  padding-left: 24px;
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--foreground);
+}
+
+.legal-prose ul {
+  list-style-type: disc;
+}
+
+.legal-prose ol {
+  list-style-type: decimal;
+}
+
+.legal-prose li {
+  margin-bottom: 4px;
+}
+
+.legal-prose section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.legal-prose hr {
+  border: none;
+  height: 1px;
+  background-color: #E0DDD8;
+}
+
+.legal-prose blockquote {
+  border-left: 4px solid var(--accent);
+  padding: 16px 24px;
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--muted-foreground);
+}
+
+.legal-prose blockquote p {
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+
+.legal-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.legal-prose th {
+  text-align: left;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-bottom: 2px solid #E0DDD8;
+  color: var(--foreground);
+}
+
+.legal-prose td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #E0DDD8;
+  color: var(--foreground);
+}
+
+.legal-prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legal-prose a:hover {
+  opacity: 0.8;
+}
