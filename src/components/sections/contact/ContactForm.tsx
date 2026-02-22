@@ -104,7 +104,7 @@ export default function ContactForm() {
 				</h3>
 				<p className="font-body text-base text-secondary-foreground text-center leading-[1.6] max-w-[500px]">
 					Thanks for reaching out. We'll get back to you within one business day
-					— usually much sooner. Keep an eye on your inbox.
+					, usually much sooner. Keep an eye on your inbox.
 				</p>
 			</div>
 		);
@@ -252,7 +252,7 @@ export default function ContactForm() {
 					value={message}
 					onChange={(e) => setMessage(e.target.value)}
 					className="h-[140px] bg-[#2A2A2A] p-4 font-body text-sm text-primary-foreground placeholder-[#666] outline-none focus:ring-1 focus:ring-accent resize-none leading-[1.6]"
-					placeholder="What's on your mind? A challenge you're facing, a question about AI, a project idea — anything goes."
+					placeholder="What's on your mind? A challenge you're facing, a question about AI, a project idea. Anything goes."
 				/>
 			</div>
 

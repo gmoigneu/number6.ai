@@ -11,7 +11,7 @@ const FAQ_ITEMS = [
 		question:
 			"I'm not sure if my business is ready for AI. Should I still reach out?",
 		answer:
-			"Absolutely. That's exactly what the discovery call is for. Most of our clients come to us at the 'curious but uncertain' stage. We'll help you figure out whether AI makes sense for your business right now — and if not, what to focus on first.",
+			"Absolutely. That's exactly what the discovery call is for. Most of our clients come to us at the 'curious but uncertain' stage. We'll help you figure out whether AI makes sense for your business right now, and if not, what to focus on first.",
 	},
 	{
 		question: "Do you work with companies outside the US and UK?",

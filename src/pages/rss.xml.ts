@@ -10,7 +10,7 @@ export async function GET(context: APIContext) {
 	);
 
 	return rss({
-		title: "The Honest Take — number6.ai",
+		title: "The Honest Take | number6.ai",
 		description:
 			"Practical, honest writing about AI for businesses. Guides, opinions, case studies, and technical deep-dives from number6.ai.",
 		site: context.site ?? "https://number6.ai",

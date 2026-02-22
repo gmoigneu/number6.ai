@@ -34,8 +34,8 @@ function wordCount(body: string) {
 ---
 
 <BaseLayout
-  title={`${categoryData?.name ?? category} — The Honest Take | number6.ai`}
-  description={`${categoryData?.description ?? ""} — Practical AI insights from number6.ai.`}
+  title={`${categoryData?.name ?? category} | The Honest Take | number6.ai`}
+  description={`${categoryData?.description ?? ""}. Practical AI insights from number6.ai.`}
 >
   <BlogHero />
   <CategoryFilters active={category} />
@@ -56,7 +56,7 @@ function wordCount(body: string) {
     <section class="flex flex-col items-center gap-6 px-16 py-20">
       <h2 class="font-heading text-3xl font-bold text-foreground">We're just getting started.</h2>
       <p class="font-body text-[17px] text-muted-foreground text-center max-w-[500px]">
-        No posts in this category yet. Check back soon or book a discovery call — our best insights happen in conversation anyway.
+        No posts in this category yet. Check back soon or book a discovery call. Our best insights happen in conversation anyway.
       </p>
       <a href="/contact" class="flex items-center gap-2 bg-foreground px-8 py-4 font-heading text-sm font-semibold tracking-[1px] text-accent-foreground hover:bg-foreground/90 transition-colors">
         Book a free discovery call
