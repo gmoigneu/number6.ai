@@ -1,0 +1,63 @@
+---
+import { ArrowRight } from "lucide-react";
+
+const services = [
+	{
+		num: "01",
+		title: "LEARN",
+		subtitle: "AI Foundations & Training",
+		description:
+			"Workshops, coaching, and team training that turn AI confusion into AI confidence. For leaders who want to understand. For teams who want to do.",
+	},
+	{
+		num: "02",
+		title: "PLAN",
+		subtitle: "AI Strategy & Readiness",
+		description:
+			"Our number6 AI Readiness Index™ evaluates your business across six dimensions and gives you a prioritized roadmap — not a 90-page report that gathers dust.",
+	},
+	{
+		num: "03",
+		title: "BUILD",
+		subtitle: "Custom AI Solutions",
+		description:
+			"From intelligent agents with memory and context to RAG-powered knowledge bases that actually know your business — we build AI tools that work in the real world.",
+	},
+	{
+		num: "04",
+		title: "GROW",
+		subtitle: "Ongoing AI Partnership",
+		description:
+			"A fractional AI partner who knows your business, monitors your AI tools, and keeps you ahead of the curve. All the expertise, none of the full-time salary.",
+	},
+];
+---
+
+<section class="flex flex-col gap-16 px-16 py-[100px] w-full">
+  <!-- Header -->
+  <div class="flex flex-col items-center gap-4 w-full">
+    <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">WHAT WE DO</span>
+    <h2 class="font-heading text-5xl font-bold text-foreground text-center leading-[1.1] tracking-[-2px] max-w-[900px]">
+      From "what is this?" to<br />"how did we live without it?"
+    </h2>
+    <p class="font-body text-base text-muted-foreground text-center leading-relaxed max-w-[600px]">
+      Whether you're just getting started or ready to build something custom, we meet you where you are.
+    </p>
+  </div>
+
+  <!-- Cards row -->
+  <div class="grid grid-cols-4 gap-0 w-full">
+    {services.map((service) => (
+      <div class="flex flex-col gap-5 p-8 border border-foreground h-full">
+        <span class="font-heading text-[44px] font-bold text-accent tracking-[-1px]">{service.num}</span>
+        <span class="font-heading text-lg font-bold tracking-[1px] text-foreground">{service.title}</span>
+        <span class="font-heading text-sm font-semibold text-foreground">{service.subtitle}</span>
+        <p class="font-body text-sm text-muted-foreground leading-relaxed flex-1">{service.description}</p>
+        <a href="/services/companies" class="flex items-center gap-2 font-heading text-xs font-semibold tracking-[1px] text-accent hover:text-accent/80 transition-colors">
+          LEARN MORE
+          <ArrowRight className="h-3.5 w-3.5" />
+        </a>
+      </div>
+    ))}
+  </div>
+</section>

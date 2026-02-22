@@ -13,11 +13,11 @@ number6.ai is a marketing website for an AI agency. Built with Astro 5 and React
 - `pnpm preview` — Preview production build locally
 - `pnpm astro add <integration>` — Add Astro integrations (e.g., react, tailwind, mdx)
 - `pnpm biome check --write` — Lint and format (auto-fix)
-- `pnpm react-doctor` — Check React components for issues
+- `npx -y react-doctor@latest . --verbose` — Check React components for issues
 
 ## Architecture
 
-- **Framework**: Astro 5 with React integration (to be added via `pnpm astro add react`)
+- **Framework**: Astro 5 with React integration (`@astrojs/react`)
 - **Output**: Static site generation (`output: "static"`)
 - **TypeScript**: Strict mode, extends `astro/tsconfigs/strict`
 - **Package manager**: pnpm
@@ -59,3 +59,22 @@ Use `.astro` components for everything static. Only use React (`.tsx`) when the 
 ## Pre-commit
 
 A pre-commit hook runs **react-doctor** and **Biome** before every commit. Both must pass for commits to succeed. Do not skip hooks with `--no-verify`.
+
+## Implemented Pages
+
+### Homepage (`/`)
+Fully implemented with 12 sections matching the design in `design/number6.pen`:
+- **Layout**: `src/layouts/BaseLayout.astro` (shared Header + Footer + HTML shell + Google Fonts)
+- **Header**: `src/components/Header.astro` — dark bg, logo, nav, CTA
+- **Footer**: `src/components/Footer.astro` — dark bg, link columns, copyright
+- **Sections** (in `src/components/sections/`): Hero, TrustBar, TheProblem, WhatWeDo, HowWeWork, WhyNumber6, WhoItsFor, SocialProof, TheName, FinalCta
+
+### Theme
+Brand colors are defined as CSS custom properties in `src/styles/global.css`:
+- Background: `#F5F2ED` (warm off-white)
+- Foreground/Primary: `#1A1A1A` (dark)
+- Accent: `#C45A3B` (terracotta)
+- Muted: `#E8E4DD` (warm beige)
+- Fonts: Space Grotesk (`font-heading`) and Inter (`font-body`) via `@theme` block
+
+All components use Tailwind CSS variable classes (e.g., `bg-accent`, `text-foreground`) — no hardcoded hex values.

@@ -1,17 +1,26 @@
 ---
-
+import FinalCta from "@/components/sections/FinalCta.astro";
+import Hero from "@/components/sections/Hero.astro";
+import HowWeWork from "@/components/sections/HowWeWork.astro";
+import SocialProof from "@/components/sections/SocialProof.astro";
+import TheName from "@/components/sections/TheName.astro";
+import TheProblem from "@/components/sections/TheProblem.astro";
+import TrustBar from "@/components/sections/TrustBar.astro";
+import WhatWeDo from "@/components/sections/WhatWeDo.astro";
+import WhoItsFor from "@/components/sections/WhoItsFor.astro";
+import WhyNumber6 from "@/components/sections/WhyNumber6.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <Hero />
+  <TrustBar />
+  <TheProblem />
+  <WhatWeDo />
+  <HowWeWork />
+  <WhyNumber6 />
+  <WhoItsFor />
+  <SocialProof />
+  <TheName />
+  <FinalCta />
+</BaseLayout>

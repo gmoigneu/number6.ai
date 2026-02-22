@@ -1,0 +1,43 @@
+---
+const steps = [
+	{
+		num: "01",
+		title: "WE LISTEN",
+		description:
+			"Every engagement starts with understanding your business, your team, and your goals. Not with a sales pitch. Not with a pre-built solution looking for a problem.",
+	},
+	{
+		num: "02",
+		title: "WE PLAN (HONESTLY)",
+		description:
+			"We identify where AI will genuinely help — and where it won't. You get a clear, prioritized plan with real costs and real timelines. No surprises.",
+	},
+	{
+		num: "03",
+		title: "WE BUILD & TEACH",
+		description:
+			"We don't just deliver and disappear. We build alongside your team, train them as we go, and make sure the solution works long after we've left. The goal is for you to need us less, not more.",
+	},
+];
+---
+
+<section id="how-we-work" class="flex flex-col gap-16 bg-foreground px-16 py-[100px] w-full">
+  <!-- Header -->
+  <div class="flex flex-col items-center gap-4 w-full">
+    <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">HOW WE WORK</span>
+    <h2 class="font-heading text-5xl font-bold text-primary-foreground text-center leading-[1.1] tracking-[-2px] max-w-[800px]">
+      No mystery. No jargon.<br />Here's how it works.
+    </h2>
+  </div>
+
+  <!-- Steps row -->
+  <div class="grid grid-cols-3 gap-0 w-full">
+    {steps.map((step) => (
+      <div class="flex flex-col gap-6 p-10 border border-border h-full">
+        <span class="font-heading text-[64px] font-bold text-accent tracking-[-2px]">{step.num}</span>
+        <span class="font-heading text-xl font-bold tracking-[1px] text-primary-foreground">{step.title}</span>
+        <p class="font-body text-sm text-secondary-foreground leading-[1.7]">{step.description}</p>
+      </div>
+    ))}
+  </div>
+</section>

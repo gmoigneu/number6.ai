@@ -1,0 +1,55 @@
+---
+import { Briefcase, Palette, Rocket, Truck } from "lucide-react";
+
+const audiences = [
+	{
+		Icon: Briefcase,
+		title: "PROFESSIONAL\nSERVICES",
+		description: "Law firms, accounting practices, consultancies",
+	},
+	{
+		Icon: Palette,
+		title: "MARKETING &\nCREATIVE",
+		description: "Content, campaigns, client workflows",
+	},
+	{
+		Icon: Truck,
+		title: "OPERATIONS-\nHEAVY",
+		description: "Logistics, manufacturing, field services",
+	},
+	{
+		Icon: Rocket,
+		title: "TECH-FORWARD\nSMBs",
+		description: "SaaS companies, startups, digital businesses",
+	},
+];
+---
+
+<section class="flex flex-col items-center gap-16 bg-muted px-16 py-[100px] w-full">
+  <!-- Header -->
+  <div class="flex flex-col items-center gap-5 w-full">
+    <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">WHO IT'S FOR</span>
+    <h2 class="font-heading text-5xl font-bold text-foreground text-center leading-[1.1] tracking-[-2px] max-w-[900px]">
+      We work with businesses that<br />want to move, not just talk.
+    </h2>
+    <p class="font-body text-base text-muted-foreground text-center leading-relaxed max-w-[650px]">
+      Our clients are typically companies with 10 to 500 people — large enough to benefit from AI, nimble enough to actually adopt it.
+    </p>
+  </div>
+
+  <!-- Audience cards -->
+  <div class="grid grid-cols-4 gap-0 w-full">
+    {audiences.map(({ Icon, title, description }) => (
+      <div class="flex flex-col gap-4 bg-background p-8 border-2 border-foreground">
+        <Icon className="h-8 w-8 text-accent" />
+        <span class="font-heading text-base font-bold tracking-[1px] text-foreground leading-[1.3] whitespace-pre-line">{title}</span>
+        <p class="font-body text-[13px] text-muted-foreground leading-normal">{description}</p>
+      </div>
+    ))}
+  </div>
+
+  <!-- Footnote -->
+  <p class="font-body text-sm text-muted-foreground text-center leading-relaxed max-w-[600px]">
+    Don't see your industry? That's fine — AI doesn't care about verticals. If your team does repetitive knowledge work, we can probably help.
+  </p>
+</section>

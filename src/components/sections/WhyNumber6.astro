@@ -1,0 +1,60 @@
+---
+import { Globe, GraduationCap, ShieldCheck, Tag, Users } from "lucide-react";
+
+const differentiators = [
+	{
+		Icon: Tag,
+		title: "We publish our prices.",
+		description:
+			"In a market where almost every AI consultancy hides their rates, we believe you deserve to know what things cost before the first call. Check our packages — they're right there on the site.",
+	},
+	{
+		Icon: ShieldCheck,
+		title: "We'll tell you when you don't need AI.",
+		description:
+			"Some problems are better solved with a spreadsheet, a process change, or a good hire. We'll tell you. Honestly. Our job is to find the right solution, not to sell you the fanciest one.",
+	},
+	{
+		Icon: Users,
+		title: "You get us. Not a junior team.",
+		description:
+			"We're a senior two-person team. When you hire number6, you work directly with the people who've spent years building, deploying, and teaching AI. No bait-and-switch. No handoff.",
+	},
+	{
+		Icon: Globe,
+		title: "Two continents. Your timezone.",
+		description:
+			"Based in Houston, TX and Manchester, UK, we cover the Americas and Europe with overlapping hours and a genuinely global perspective. Morning call in Texas, afternoon call in London — we've got you.",
+	},
+	{
+		Icon: GraduationCap,
+		title: "We teach your team to fish.",
+		description:
+			"Every project includes training. Every engagement ends with your team knowing more than when we started. Because the best AI adoption is the kind that doesn't depend on us being in the room.",
+	},
+];
+---
+
+<section class="flex flex-col gap-16 px-16 py-[100px] w-full">
+  <!-- Header -->
+  <div class="flex flex-col gap-4 w-full">
+    <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">THE DIFFERENCE</span>
+    <h2 class="font-heading text-[56px] font-bold text-foreground tracking-[-2px]">Why number6?</h2>
+    <div class="h-1 w-full bg-foreground"></div>
+  </div>
+
+  <!-- Differentiator cards -->
+  <div class="flex flex-col w-full">
+    {differentiators.map(({ Icon, title, description }) => (
+      <div class="flex gap-12 p-10 border border-foreground">
+        <div class="flex h-14 w-14 shrink-0 items-center justify-center border-2 border-foreground">
+          <Icon className="h-6 w-6 text-accent" />
+        </div>
+        <div class="flex flex-col gap-3 flex-1">
+          <h3 class="font-heading text-2xl font-bold text-foreground tracking-[-1px]">{title}</h3>
+          <p class="font-body text-[15px] text-muted-foreground leading-[1.7]">{description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

@@ -3538,7 +3538,7 @@
                   "type": "ref",
                   "ref": "C3KOZ",
                   "x": 24,
-                  "y": 24.01994370166805,
+                  "y": 24.019943701668048,
                   "width": "fill_container",
                   "descendants": {
                     "NEMHS": {
@@ -15779,6 +15779,480 @@
                       "fontFamily": "Inter",
                       "fontSize": 17,
                       "fontStyle": "italic"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "HIidK",
+                  "name": "div12",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#E0DDD8"
+                },
+                {
+                  "type": "frame",
+                  "id": "JyoEW",
+                  "name": "Section 13",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "lMl5v",
+                      "name": "s13h",
+                      "fill": "#1A1A1A",
+                      "content": "13. Changes to These Terms",
+                      "fontFamily": "Space Grotesk",
+                      "fontSize": 28,
+                      "fontWeight": "700",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "text",
+                      "id": "ELkVZ",
+                      "name": "s13p1",
+                      "fill": "#1A1A1A",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "We may update these Terms from time to time. When we do, we'll update the \"Last updated\" date at the top of this page. For significant changes, we'll make reasonable efforts to notify you (e.g., via a notice on our website).",
+                      "lineHeight": 1.75,
+                      "fontFamily": "Inter",
+                      "fontSize": 17
+                    },
+                    {
+                      "type": "text",
+                      "id": "h1xKQ",
+                      "name": "s13p2",
+                      "fill": "#1A1A1A",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Your continued use of our website after changes are posted constitutes acceptance of the updated Terms.",
+                      "lineHeight": 1.75,
+                      "fontFamily": "Inter",
+                      "fontSize": 17
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Tc5iD",
+                  "name": "div13",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#E0DDD8"
+                },
+                {
+                  "type": "frame",
+                  "id": "4dgdC",
+                  "name": "Section 14",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "tAdS3",
+                      "name": "s14h",
+                      "fill": "#1A1A1A",
+                      "content": "14. Contact Us",
+                      "fontFamily": "Space Grotesk",
+                      "fontSize": 28,
+                      "fontWeight": "700",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "text",
+                      "id": "xbz7x",
+                      "name": "s14p1",
+                      "fill": "#1A1A1A",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Questions about these Terms? We're happy to explain.",
+                      "lineHeight": 1.75,
+                      "fontFamily": "Inter",
+                      "fontSize": 17
+                    },
+                    {
+                      "type": "frame",
+                      "id": "N6Uir",
+                      "name": "s14contacts",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "doc3o",
+                          "name": "s14e",
+                          "fill": "#1A1A1A",
+                          "content": "Email: hello@number6.ai",
+                          "lineHeight": 1.75,
+                          "fontFamily": "Inter",
+                          "fontSize": 17,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "jNJdl",
+                          "name": "s14w",
+                          "fill": "#1A1A1A",
+                          "content": "Website: number6.ai/contact",
+                          "lineHeight": 1.75,
+                          "fontFamily": "Inter",
+                          "fontSize": 17,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fGGHy",
+                  "name": "backToTop",
+                  "width": "fill_container",
+                  "stroke": {
+                    "thickness": {
+                      "top": 1
+                    },
+                    "fill": "#E0DDD8"
+                  },
+                  "padding": [
+                    32,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "YqBiH",
+                      "name": "bttLink",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "1xzX1",
+                          "name": "bttIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "arrow-up",
+                          "iconFontFamily": "lucide",
+                          "fill": "#C45A3B"
+                        },
+                        {
+                          "type": "text",
+                          "id": "rDQ7k",
+                          "name": "bttText",
+                          "fill": "#C45A3B",
+                          "content": "Back to top",
+                          "fontFamily": "Space Grotesk",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "RcPF8",
+          "name": "footer",
+          "width": "fill_container",
+          "fill": "#1A1A1A",
+          "layout": "vertical",
+          "gap": 64,
+          "padding": [
+            64,
+            64,
+            40,
+            64
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "CPPVi",
+              "name": "footerTop",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "5XNTH",
+                  "name": "footerBrand",
+                  "width": 350,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "j33eq",
+                      "name": "footerLogo",
+                      "gap": 14,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "xMje6",
+                          "name": "footerLogoMark",
+                          "width": 36,
+                          "height": 36,
+                          "fill": "#C45A3B",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "kRZ9b",
+                              "name": "footerLogoNum",
+                              "fill": "#F5F2ED",
+                              "content": "6",
+                              "fontFamily": "Space Grotesk",
+                              "fontSize": 20,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "yfVTQ",
+                          "name": "footerLogoText",
+                          "fill": "#F5F2ED",
+                          "content": "NUMBER6",
+                          "fontFamily": "Space Grotesk",
+                          "fontSize": 16,
+                          "fontWeight": "700",
+                          "letterSpacing": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "fEBWl",
+                      "name": "footerTagline",
+                      "fill": "#999999",
+                      "content": "AI consulting for the real world.\nHouston, TX · Manchester, UK",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 14
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "qnF2G",
+                  "name": "footerLinks",
+                  "gap": 80,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "JjnZE",
+                      "name": "footerCol1",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "FIgv0",
+                          "name": "footerCol1Title",
+                          "fill": "#F5F2ED",
+                          "content": "SERVICES",
+                          "fontFamily": "Space Grotesk",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "text",
+                          "id": "vwQbG",
+                          "name": "footerCol1Link1",
+                          "fill": "#888888",
+                          "content": "AI Training",
+                          "fontFamily": "Inter",
+                          "fontSize": 14
+                        },
+                        {
+                          "type": "text",
+                          "id": "pB1qH",
+                          "name": "footerCol1Link2",
+                          "fill": "#888888",
+                          "content": "AI Strategy",
+                          "fontFamily": "Inter",
+                          "fontSize": 14
+                        },
+                        {
+                          "type": "text",
+                          "id": "Pk9sV",
+                          "name": "footerCol1Link3",
+                          "fill": "#888888",
+                          "content": "Custom AI Solutions",
+                          "fontFamily": "Inter",
+                          "fontSize": 14
+                        },
+                        {
+                          "type": "text",
+                          "id": "3z8QH",
+                          "name": "footerCol1Link4",
+                          "fill": "#888888",
+                          "content": "AI Partnership",
+                          "fontFamily": "Inter",
+                          "fontSize": 14
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "XR6iH",
+                      "name": "footerCol2",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "aN634",
+                          "name": "footerCol2Title",
+                          "fill": "#F5F2ED",
+                          "content": "COMPANY",
+                          "fontFamily": "Space Grotesk",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "text",
+                          "id": "zVPwJ",
+                          "name": "footerCol2Link1",
+                          "fill": "#888888",
+                          "content": "About",
+                          "fontFamily": "Inter",
+                          "fontSize": 14
+                        },
+                        {
+                          "type": "text",
+                          "id": "66gMs",
+                          "name": "footerCol2Link2",
+                          "fill": "#888888",
+                          "content": "Blog",
+                          "fontFamily": "Inter",
+                          "fontSize": 14
+                        },
+                        {
+                          "type": "text",
+                          "id": "llehC",
+                          "name": "footerCol2Link3",
+                          "fill": "#888888",
+                          "content": "Contact",
+                          "fontFamily": "Inter",
+                          "fontSize": 14
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "LDc7P",
+                      "name": "footerCol3",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "zVGjm",
+                          "name": "footerCol3Title",
+                          "fill": "#F5F2ED",
+                          "content": "CONNECT",
+                          "fontFamily": "Space Grotesk",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "text",
+                          "id": "jGVJD",
+                          "name": "footerCol3Link1",
+                          "fill": "#888888",
+                          "content": "LinkedIn",
+                          "fontFamily": "Inter",
+                          "fontSize": 14
+                        },
+                        {
+                          "type": "text",
+                          "id": "pYE73",
+                          "name": "footerCol3Link2",
+                          "fill": "#888888",
+                          "content": "Email",
+                          "fontFamily": "Inter",
+                          "fontSize": 14
+                        },
+                        {
+                          "type": "text",
+                          "id": "oJVlB",
+                          "name": "footerCol3Link3",
+                          "fill": "#888888",
+                          "content": "Book a Call",
+                          "fontFamily": "Inter",
+                          "fontSize": 14
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "jOqof",
+              "name": "footerDivider",
+              "width": "fill_container",
+              "height": 1,
+              "fill": "#333333"
+            },
+            {
+              "type": "frame",
+              "id": "XNidD",
+              "name": "footerBottom",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "aPCqC",
+                  "name": "footerCopy",
+                  "fill": "#888888",
+                  "content": "© 2026 number6.ai. All rights reserved.",
+                  "fontFamily": "Inter",
+                  "fontSize": 12
+                },
+                {
+                  "type": "frame",
+                  "id": "VDaB4",
+                  "name": "footerLegal",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "6Ou4t",
+                      "name": "footerPrivacy",
+                      "fill": "#888888",
+                      "content": "Privacy Policy",
+                      "fontFamily": "Inter",
+                      "fontSize": 12
+                    },
+                    {
+                      "type": "text",
+                      "id": "hCgvo",
+                      "name": "footerTerms",
+                      "fill": "#888888",
+                      "content": "Terms of Service",
+                      "fontFamily": "Inter",
+                      "fontSize": 12
                     }
                   ]
                 }
