@@ -1,0 +1,37 @@
+---
+import { categories } from "@/data/categories";
+
+interface Props {
+	active?: string;
+}
+
+const { active } = Astro.props;
+const isAll = !active;
+---
+
+<nav class="flex items-center gap-3 px-16 py-6 w-full">
+  <a
+    href="/blog"
+    class:list={[
+      "font-heading text-[13px] font-semibold rounded-full px-5 py-2 transition-colors",
+      isAll
+        ? "bg-foreground text-background"
+        : "border border-[#CCCCCC] text-muted-foreground hover:border-foreground hover:text-foreground",
+    ]}
+  >
+    All
+  </a>
+  {Object.values(categories).map((cat) => (
+    <a
+      href={`/blog/category/${cat.slug}`}
+      class:list={[
+        "font-heading text-[13px] font-medium rounded-full px-5 py-2 transition-colors",
+        active === cat.slug
+          ? "bg-foreground text-background"
+          : "border border-[#CCCCCC] text-muted-foreground hover:border-foreground hover:text-foreground",
+      ]}
+    >
+      {cat.name}
+    </a>
+  ))}
+</nav>

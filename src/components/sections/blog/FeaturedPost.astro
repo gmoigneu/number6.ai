@@ -1,0 +1,82 @@
+---
+import { authors } from "@/data/authors";
+import { categories } from "@/data/categories";
+
+interface Props {
+	slug: string;
+	title: string;
+	date: Date;
+	category: string;
+	excerpt: string;
+	author: string;
+	featured_image: string;
+	featured_image_alt: string;
+	wordCount?: number;
+}
+
+const {
+	slug,
+	title,
+	date,
+	category,
+	excerpt,
+	author,
+	featured_image,
+	featured_image_alt,
+	wordCount = 0,
+} = Astro.props;
+
+const categoryData = categories[category];
+const authorData = authors[author];
+const readTime = Math.max(1, Math.ceil(wordCount / 200));
+const formattedDate = date.toLocaleDateString("en-US", {
+	month: "short",
+	day: "numeric",
+	year: "numeric",
+});
+---
+
+<section class="flex gap-12 px-16 py-12 w-full">
+  <a href={`/blog/${slug}`} class="block flex-1 min-w-0">
+    <div
+      class="w-full h-[420px] rounded-[4px] bg-muted bg-cover bg-center"
+      style={`background-image: url('${featured_image}')`}
+      role="img"
+      aria-label={featured_image_alt}
+    ></div>
+  </a>
+  <div class="flex flex-col justify-center gap-5 flex-1 min-w-0">
+    <a href={`/blog/category/${category}`} class="self-start">
+      <span class="inline-block font-heading text-[10px] font-semibold tracking-[1.5px] text-accent-foreground bg-accent rounded-full px-3 py-1 uppercase">
+        {categoryData?.name ?? category}
+      </span>
+    </a>
+    <a href={`/blog/${slug}`}>
+      <h2 class="font-heading text-4xl font-bold tracking-[-1.5px] leading-[1.15] text-foreground hover:text-accent transition-colors">
+        {title}
+      </h2>
+    </a>
+    <div class="flex items-center gap-4">
+      <span class="font-body text-[13px] text-muted-foreground">{formattedDate}</span>
+      <span class="font-body text-[13px] text-muted-foreground">&middot;</span>
+      <span class="font-body text-[13px] text-muted-foreground">{readTime} min read</span>
+    </div>
+    <p class="font-body text-[15px] text-[#666666] leading-[1.65]">
+      {excerpt}
+    </p>
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
+        <span class="font-heading text-xs font-bold text-accent-foreground">
+          {authorData?.name?.charAt(0) ?? "?"}
+        </span>
+      </div>
+      <span class="font-body text-[13px] font-medium text-foreground">
+        {authorData?.name ?? author}
+      </span>
+    </div>
+    <a href={`/blog/${slug}`} class="flex items-center gap-2 group self-start">
+      <span class="font-heading text-sm font-semibold text-foreground group-hover:text-accent transition-colors">Read more</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-foreground group-hover:text-accent transition-colors"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>

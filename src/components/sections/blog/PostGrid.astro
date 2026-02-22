@@ -1,0 +1,31 @@
+---
+import BlogCard from "./BlogCard.astro";
+
+interface Post {
+	slug: string;
+	title: string;
+	date: Date;
+	category: string;
+	excerpt: string;
+	author: string;
+	featured_image: string;
+	featured_image_alt: string;
+	wordCount?: number;
+}
+
+interface Props {
+	posts: Post[];
+}
+
+const { posts } = Astro.props;
+---
+
+{posts.length > 0 && (
+  <section class="flex flex-col gap-8 px-16 pt-4 pb-12 w-full">
+    <div class="grid grid-cols-2 gap-8">
+      {posts.map((post) => (
+        <BlogCard {...post} />
+      ))}
+    </div>
+  </section>
+)}

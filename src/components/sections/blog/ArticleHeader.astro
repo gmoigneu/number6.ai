@@ -1,0 +1,56 @@
+---
+import { authors } from "@/data/authors";
+import { categories } from "@/data/categories";
+
+interface Props {
+	title: string;
+	subtitle?: string;
+	date: Date;
+	category: string;
+	author: string;
+	wordCount: number;
+}
+
+const { title, subtitle, date, category, author, wordCount } = Astro.props;
+
+const categoryData = categories[category];
+const authorData = authors[author];
+const readTime = Math.max(1, Math.ceil(wordCount / 200));
+const formattedDate = date.toLocaleDateString("en-US", {
+	month: "long",
+	day: "numeric",
+	year: "numeric",
+});
+---
+
+<header class="flex flex-col items-center gap-8 px-16 pt-20 pb-12 w-full">
+  <a href={`/blog/category/${category}`}>
+    <span class="inline-block font-heading text-[11px] font-semibold tracking-[1.5px] text-accent-foreground bg-accent rounded-full px-4 py-1.5 uppercase">
+      {categoryData?.name ?? category}
+    </span>
+  </a>
+  <h1 class="font-heading text-[52px] font-bold tracking-[-2.5px] leading-[1.1] text-foreground text-center max-w-[900px]">
+    {title}
+  </h1>
+  {subtitle && (
+    <p class="font-body text-lg text-muted-foreground leading-[1.6] text-center max-w-[700px]">
+      {subtitle}
+    </p>
+  )}
+  <div class="flex items-center gap-4">
+    <span class="font-body text-[13px] text-[#AAAAAA]">{formattedDate}</span>
+    <span class="font-body text-[13px] text-[#AAAAAA]">&middot;</span>
+    <span class="font-body text-[13px] text-[#AAAAAA]">{readTime} min read</span>
+  </div>
+  <div class="flex items-center gap-3">
+    <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+      <span class="font-heading text-sm font-bold text-accent-foreground">
+        {authorData?.name?.charAt(0) ?? "?"}
+      </span>
+    </div>
+    <div class="flex flex-col gap-0.5">
+      <span class="font-body text-sm font-medium text-foreground">{authorData?.name ?? author}</span>
+      <span class="font-body text-xs text-muted-foreground">{authorData?.role}, {authorData?.location}</span>
+    </div>
+  </div>
+</header>

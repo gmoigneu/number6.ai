@@ -1,0 +1,27 @@
+---
+interface Props {
+	headline?: string;
+	body?: string;
+}
+
+const {
+	headline = "Want to stop reading\nand start doing?",
+	body = "Our blog is free. Our advice is, too — for the first 30 minutes. Book a discovery call and let's talk about what AI can actually do for your business.",
+} = Astro.props;
+---
+
+<section class="flex flex-col items-center gap-8 px-16 py-[100px] w-full bg-accent">
+  <h2 class="font-heading text-5xl font-bold tracking-[-2px] leading-[1.1] text-accent-foreground text-center max-w-[800px] whitespace-pre-line">
+    {headline}
+  </h2>
+  <p class="font-body text-[17px] text-accent-foreground/80 leading-[1.6] text-center max-w-[600px]">
+    {body}
+  </p>
+  <a
+    href="/contact"
+    class="flex items-center gap-3 bg-foreground px-10 py-5 font-heading text-sm font-semibold tracking-[1px] text-accent-foreground hover:bg-foreground/90 transition-colors"
+  >
+    BOOK A FREE DISCOVERY CALL
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  </a>
+</section>

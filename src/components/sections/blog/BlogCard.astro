@@ -1,0 +1,65 @@
+---
+import { authors } from "@/data/authors";
+import { categories } from "@/data/categories";
+
+interface Props {
+	slug: string;
+	title: string;
+	date: Date;
+	category: string;
+	excerpt: string;
+	author: string;
+	featured_image: string;
+	featured_image_alt: string;
+	wordCount?: number;
+}
+
+const {
+	slug,
+	title,
+	date,
+	category,
+	excerpt,
+	author,
+	featured_image,
+	featured_image_alt,
+	wordCount = 0,
+} = Astro.props;
+
+const categoryData = categories[category];
+const authorData = authors[author];
+const readTime = Math.max(1, Math.ceil(wordCount / 200));
+const formattedDate = date.toLocaleDateString("en-US", {
+	month: "short",
+	day: "numeric",
+	year: "numeric",
+});
+---
+
+<a href={`/blog/${slug}`} class="flex flex-col gap-4 group">
+  <div
+    class="w-full h-[220px] rounded-[4px] bg-muted bg-cover bg-center"
+    style={`background-image: url('${featured_image}')`}
+    role="img"
+    aria-label={featured_image_alt}
+  ></div>
+  <div class="flex flex-col gap-3">
+    <span class="font-heading text-[10px] font-semibold tracking-[1.5px] text-accent uppercase">
+      {categoryData?.name ?? category}
+    </span>
+    <h3 class="font-heading text-xl font-bold tracking-[-0.5px] leading-[1.2] text-foreground group-hover:text-accent transition-colors">
+      {title}
+    </h3>
+    <div class="flex items-center gap-4">
+      <span class="font-body text-[13px] text-muted-foreground">{formattedDate}</span>
+      <span class="font-body text-[13px] text-muted-foreground">&middot;</span>
+      <span class="font-body text-[13px] text-muted-foreground">{readTime} min read</span>
+    </div>
+    <p class="font-body text-[15px] text-[#666666] leading-[1.65] line-clamp-2">
+      {excerpt}
+    </p>
+    <span class="font-body text-[13px] font-medium text-foreground">
+      {authorData?.name ?? author}
+    </span>
+  </div>
+</a>

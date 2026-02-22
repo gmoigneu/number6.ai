@@ -1,0 +1,83 @@
+---
+import { getCollection } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import BlogCta from "@/components/sections/blog/BlogCta.astro";
+import BlogHero from "@/components/sections/blog/BlogHero.astro";
+import CategoryFilters from "@/components/sections/blog/CategoryFilters.astro";
+import FeaturedPost from "@/components/sections/blog/FeaturedPost.astro";
+import NewsletterSignup from "@/components/sections/blog/NewsletterSignup.astro";
+import PostGrid from "@/components/sections/blog/PostGrid.astro";
+import { categories, categorySlugs } from "@/data/categories";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+export const getStaticPaths: GetStaticPaths = async () => {
+	return categorySlugs.map((slug) => ({ params: { category: slug } }));
+};
+
+const { category } = Astro.params;
+const categoryData = categories[category!];
+
+const allPosts = await getCollection(
+	"blog",
+	({ data }) => !data.draft && data.category === category,
+);
+const sorted = allPosts.sort(
+	(a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+
+const featuredPost = sorted.find((p) => p.data.featured) ?? sorted[0];
+const gridPosts = sorted.filter((p) => p.id !== featuredPost?.id);
+
+function wordCount(body: string) {
+	return body.split(/\s+/).filter(Boolean).length;
+}
+---
+
+<BaseLayout
+  title={`${categoryData?.name ?? category} — The Honest Take | number6.ai`}
+  description={`${categoryData?.description ?? ""} — Practical AI insights from number6.ai.`}
+>
+  <BlogHero />
+  <CategoryFilters active={category} />
+
+  {featuredPost ? (
+    <FeaturedPost
+      slug={featuredPost.id}
+      title={featuredPost.data.title}
+      date={featuredPost.data.date}
+      category={featuredPost.data.category}
+      excerpt={featuredPost.data.excerpt}
+      author={featuredPost.data.author}
+      featured_image={featuredPost.data.featured_image}
+      featured_image_alt={featuredPost.data.featured_image_alt}
+      wordCount={wordCount(featuredPost.body ?? "")}
+    />
+  ) : (
+    <section class="flex flex-col items-center gap-6 px-16 py-20">
+      <h2 class="font-heading text-3xl font-bold text-foreground">We're just getting started.</h2>
+      <p class="font-body text-[17px] text-muted-foreground text-center max-w-[500px]">
+        No posts in this category yet. Check back soon or book a discovery call — our best insights happen in conversation anyway.
+      </p>
+      <a href="/contact" class="flex items-center gap-2 bg-foreground px-8 py-4 font-heading text-sm font-semibold tracking-[1px] text-accent-foreground hover:bg-foreground/90 transition-colors">
+        Book a free discovery call
+      </a>
+    </section>
+  )}
+
+  <PostGrid
+    posts={gridPosts.map((p) => ({
+      slug: p.id,
+      title: p.data.title,
+      date: p.data.date,
+      category: p.data.category,
+      excerpt: p.data.excerpt,
+      author: p.data.author,
+      featured_image: p.data.featured_image,
+      featured_image_alt: p.data.featured_image_alt,
+      wordCount: wordCount(p.body ?? ""),
+    }))}
+  />
+
+  <NewsletterSignup />
+  <BlogCta />
+</BaseLayout>

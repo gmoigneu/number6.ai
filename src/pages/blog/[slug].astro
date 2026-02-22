@@ -1,0 +1,121 @@
+---
+import { getCollection, render } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import ArticleHeader from "@/components/sections/blog/ArticleHeader.astro";
+import AuthorBox from "@/components/sections/blog/AuthorBox.astro";
+import BlogCta from "@/components/sections/blog/BlogCta.astro";
+import InArticleCta from "@/components/sections/blog/InArticleCta.astro";
+import NewsletterSignup from "@/components/sections/blog/NewsletterSignup.astro";
+import RelatedArticles from "@/components/sections/blog/RelatedArticles.astro";
+import TagsAndShare from "@/components/sections/blog/TagsAndShare.astro";
+import { authors } from "@/data/authors";
+import { categories } from "@/data/categories";
+import BlogArticleLayout from "@/layouts/BlogArticleLayout.astro";
+
+export const getStaticPaths: GetStaticPaths = async () => {
+	const posts = await getCollection("blog", ({ data }) => !data.draft);
+	return posts.map((post) => ({
+		params: { slug: post.id },
+		props: { post },
+	}));
+};
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const body = post.body ?? "";
+const wordCount = body.split(/\s+/).filter(Boolean).length;
+
+// Related articles: same category > shared tags > newest
+const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+const otherPosts = allPosts.filter((p) => p.id !== post.id);
+
+const scored = otherPosts.map((p) => {
+	let score = 0;
+	if (p.data.category === post.data.category) score += 2;
+	for (const tag of p.data.tags) {
+		if (post.data.tags.includes(tag)) score += 1;
+	}
+	return { post: p, score };
+});
+
+scored.sort(
+	(a, b) =>
+		b.score - a.score ||
+		b.post.data.date.getTime() - a.post.data.date.getTime(),
+);
+const related = scored.slice(0, 3).map((s) => s.post);
+
+const articleUrl = new URL(
+	`/blog/${post.id}`,
+	Astro.site ?? "https://number6.ai",
+).href;
+const authorData = authors[post.data.author];
+const categoryData = categories[post.data.category];
+---
+
+<BlogArticleLayout
+  title={`${post.data.title} — The Honest Take | number6.ai`}
+  description={post.data.excerpt}
+  ogImage={post.data.featured_image}
+  publishedTime={post.data.date.toISOString()}
+  authorName={authorData?.name}
+  category={categoryData?.name}
+  tags={post.data.tags}
+>
+  <ArticleHeader
+    title={post.data.title}
+    subtitle={post.data.subtitle}
+    date={post.data.date}
+    category={post.data.category}
+    author={post.data.author}
+    wordCount={wordCount}
+  />
+
+  <!-- Hero image -->
+  <div class="px-16 w-full">
+    <div
+      class="w-full h-[520px] rounded-[4px] bg-muted bg-cover bg-center"
+      style={`background-image: url('${post.data.featured_image}')`}
+      role="img"
+      aria-label={post.data.featured_image_alt}
+    ></div>
+  </div>
+
+  <!-- Article body -->
+  <article class="blog-prose">
+    <Content />
+  </article>
+
+  <!-- In-article CTA -->
+  <div class="px-[360px] pb-8 w-full">
+    <InArticleCta />
+  </div>
+
+  <!-- Article footer -->
+  <footer class="flex flex-col gap-12 px-[360px] pb-12 w-full">
+    <AuthorBox author={post.data.author} />
+    <TagsAndShare
+      tags={post.data.tags}
+      url={articleUrl}
+      title={post.data.title}
+    />
+  </footer>
+
+  <RelatedArticles
+    posts={related.map((p) => ({
+      slug: p.id,
+      title: p.data.title,
+      date: p.data.date,
+      category: p.data.category,
+      excerpt: p.data.excerpt,
+      author: p.data.author,
+      featured_image: p.data.featured_image,
+      featured_image_alt: p.data.featured_image_alt,
+      wordCount: (p.body ?? "").split(/\s+/).filter(Boolean).length,
+    }))}
+  />
+
+  <NewsletterSignup />
+  <BlogCta headline={"Want to talk about this?"} />
+</BlogArticleLayout>
