@@ -38,7 +38,7 @@ export default function ContactFaq() {
 	}
 
 	return (
-		<section className="flex flex-col items-center gap-12 bg-muted px-16 py-[100px] w-full">
+		<section className="flex flex-col items-center gap-12 bg-muted px-4 md:px-8 lg:px-16 py-[100px] w-full">
 			<h2 className="font-heading text-[40px] font-bold text-foreground text-center leading-[1.1] tracking-[-1.5px] max-w-[800px]">
 				Questions people usually ask before getting in touch.
 			</h2>

@@ -8,17 +8,18 @@ interface TocEntry {
 
 interface Props {
 	title: string;
+	description?: string;
 	lastUpdated: string;
 	breadcrumbLabel: string;
 	toc: TocEntry[];
 }
 
-const { title, lastUpdated, breadcrumbLabel, toc } = Astro.props;
+const { title, description, lastUpdated, breadcrumbLabel, toc } = Astro.props;
 ---
 
-<BaseLayout title={`${title} | number6.ai`} description={title}>
+<BaseLayout title={`${title} | number6.ai`} description={description ?? title}>
   <!-- Breadcrumbs + Title Area -->
-  <div class="flex flex-col gap-5 px-16 pt-16 pb-12 w-full border-b border-foreground">
+  <div class="flex flex-col gap-5 px-4 md:px-8 lg:px-16 pt-16 pb-12 w-full border-b border-foreground">
     <nav class="flex items-center gap-2">
       <a href="/" class="font-body text-[13px] text-muted-foreground hover:text-foreground transition-colors">Home</a>
       <span class="font-body text-[13px] text-[#AAAAAA]">/</span>
@@ -29,7 +30,7 @@ const { title, lastUpdated, breadcrumbLabel, toc } = Astro.props;
   </div>
 
   <!-- Content Area: TOC Sidebar + Body -->
-  <div class="flex gap-16 px-16 py-12 w-full">
+  <div class="flex gap-16 px-4 md:px-8 lg:px-16 py-12 w-full">
     <!-- TOC Sidebar -->
     <aside class="w-[260px] shrink-0 sticky top-8 self-start">
       <div class="flex flex-col gap-4">

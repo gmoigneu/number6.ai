@@ -1,4 +1,5 @@
 ---
+import SchemaOrg from "@/components/SchemaOrg.astro";
 import AboutCta from "@/components/sections/about/AboutCta.astro";
 import AboutHero from "@/components/sections/about/AboutHero.astro";
 import HowWeGotHere from "@/components/sections/about/HowWeGotHere.astro";
@@ -7,13 +8,36 @@ import OurStory from "@/components/sections/about/OurStory.astro";
 import WhatWeBelieve from "@/components/sections/about/WhatWeBelieve.astro";
 import WhereWeWork from "@/components/sections/about/WhereWeWork.astro";
 import WhyNumber6 from "@/components/sections/about/WhyNumber6.astro";
+import { business } from "@/data/business";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	itemListElement: [
+		{
+			"@type": "ListItem",
+			position: 1,
+			name: "Home",
+			item: business.url,
+		},
+		{
+			"@type": "ListItem",
+			position: 2,
+			name: "About",
+			item: `${business.url}/about/`,
+		},
+	],
+};
 ---
 
 <BaseLayout
-  title="About Us | number6.ai"
+  title="About Us - Meet the AI Consultants | number6.ai"
   description="Two people, two continents, one mission: practical AI consulting that actually works. Meet the team behind number6.ai."
 >
+  <Fragment slot="head">
+    <SchemaOrg schemas={[breadcrumbSchema]} />
+  </Fragment>
   <AboutHero />
   <OurStory />
   <div class="h-px w-full bg-foreground"></div>

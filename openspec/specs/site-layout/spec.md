@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: BaseLayout with shared structure
-The site SHALL provide a `BaseLayout.astro` layout that includes the HTML shell, meta tags, font loading (`<link>` tags with preconnect), global CSS import, Header, a content slot, and Footer.
+The site SHALL provide a `BaseLayout.astro` layout that includes the HTML shell, meta tags, self-hosted font loading via `@font-face` declarations and `<link rel="preload">` for critical weights, global CSS import, canonical URL tag, default OG and Twitter Card meta tags, a named `<slot name="head" />` for per-page meta injection, Header, a content slot, and Footer.
 
 #### Scenario: Page uses BaseLayout
 - **WHEN** a page uses `<BaseLayout>` as its layout
@@ -9,7 +9,15 @@ The site SHALL provide a `BaseLayout.astro` layout that includes the HTML shell,
 
 #### Scenario: Meta tags and fonts
 - **WHEN** the page loads
-- **THEN** it includes charset, viewport, favicon, Google Fonts preconnect and stylesheet links for Space Grotesk and Inter
+- **THEN** it includes charset, viewport, favicon (including apple-touch-icon, favicon-96x96.png, and site.webmanifest), self-hosted font `@font-face` declarations for Space Grotesk (400, 600, 700) and Inter (400, 500), and `<link rel="preload">` for Space Grotesk 700 and Inter 400
+
+#### Scenario: Canonical and OG tags render
+- **WHEN** any page using BaseLayout loads
+- **THEN** the `<head>` contains a canonical URL tag, og:title, og:description, og:url, og:type, og:site_name, twitter:card, twitter:title, and twitter:description
+
+#### Scenario: Head slot accepts page-specific meta
+- **WHEN** a page provides content for `<slot name="head">`
+- **THEN** the custom content renders inside `<head>` alongside default meta tags
 
 ### Requirement: Header component
 The Header SHALL be an Astro component with:
@@ -33,11 +41,15 @@ The Footer SHALL be an Astro component with:
 - Divider: 1px line in `#333`
 - Bottom row: Copyright "© 2026 number6.ai. All rights reserved." and legal links (Privacy Policy, Terms of Service)
 
-The Footer SHALL have a dark (`#1A1A1A`) background with vertical layout and `px-16 pt-16 pb-10` padding.
+The Footer SHALL have a dark (`#1A1A1A`) background with vertical layout and responsive padding: `px-4 md:px-8 lg:px-16 pt-16 pb-10`.
 
 The Footer legal links SHALL point to:
 - "Privacy Policy" → `/privacy`
 - "Terms of Service" → `/terms`
+
+The Footer Services links SHALL point to `/services` (not `/services/companies`).
+
+The Footer LinkedIn link SHALL use the actual company LinkedIn URL (not `href="#"`).
 
 #### Scenario: Footer renders correctly
 - **WHEN** any page using BaseLayout loads
@@ -45,7 +57,7 @@ The Footer legal links SHALL point to:
 
 #### Scenario: Footer link columns
 - **WHEN** the user views the Footer
-- **THEN** they see three columns: Services (AI Training, AI Strategy, Custom AI Solutions, AI Partnership), Company (About, Blog, Contact), Connect (LinkedIn, Email, Book a Call)
+- **THEN** they see three columns: Services (AI Training, AI Strategy, Custom AI Solutions, AI Partnership) linking to `/services`, Company (About, Blog, Contact), Connect (LinkedIn with real URL, Email, Book a Call)
 
 #### Scenario: Footer legal links navigate to legal pages
 - **WHEN** the user clicks "Privacy Policy" in the Footer
@@ -54,3 +66,21 @@ The Footer legal links SHALL point to:
 #### Scenario: Footer terms link navigates to terms page
 - **WHEN** the user clicks "Terms of Service" in the Footer
 - **THEN** they navigate to `/terms`
+
+#### Scenario: Footer services links work
+- **WHEN** the user clicks any Services link in the Footer
+- **THEN** they navigate to `/services` (no 404)
+
+### Requirement: Responsive padding on all sections
+All section components SHALL use responsive horizontal padding: `px-4 md:px-8 lg:px-16` instead of fixed `px-16`. The Header SHALL also use responsive padding.
+
+#### Scenario: Sections have responsive padding
+- **WHEN** the viewport is narrower than 768px
+- **THEN** sections use 16px (1rem) horizontal padding instead of 64px
+
+### Requirement: No generator meta tag
+BaseLayout SHALL NOT include `<meta name="generator">` tag.
+
+#### Scenario: Generator tag is absent
+- **WHEN** any page loads
+- **THEN** the HTML source does not contain a `meta` tag with `name="generator"`

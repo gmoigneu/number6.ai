@@ -1,4 +1,5 @@
 ---
+import SchemaOrg from "@/components/SchemaOrg.astro";
 import ContactCta from "@/components/sections/contact/ContactCta.astro";
 import ContactFaq from "@/components/sections/contact/ContactFaq";
 import ContactFormSection from "@/components/sections/contact/ContactFormSection.astro";
@@ -6,13 +7,36 @@ import ContactHero from "@/components/sections/contact/ContactHero.astro";
 import ContactLocations from "@/components/sections/contact/ContactLocations.astro";
 import ContactOptions from "@/components/sections/contact/ContactOptions.astro";
 import WhatToExpect from "@/components/sections/contact/WhatToExpect.astro";
+import { business } from "@/data/business";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	itemListElement: [
+		{
+			"@type": "ListItem",
+			position: 1,
+			name: "Home",
+			item: business.url,
+		},
+		{
+			"@type": "ListItem",
+			position: 2,
+			name: "Contact",
+			item: `${business.url}/contact/`,
+		},
+	],
+};
 ---
 
 <BaseLayout
-  title="Contact Us | number6.ai"
+  title="Get in Touch - Book a Free AI Discovery Call | number6.ai"
   description="Get in touch with number6.ai. Book a free discovery call, send us a message, or email us directly."
 >
+  <Fragment slot="head">
+    <SchemaOrg schemas={[breadcrumbSchema]} />
+  </Fragment>
   <ContactHero />
   <ContactOptions />
   <ContactFormSection />

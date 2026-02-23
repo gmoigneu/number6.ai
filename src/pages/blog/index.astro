@@ -1,11 +1,13 @@
 ---
 import { getCollection } from "astro:content";
+import SchemaOrg from "@/components/SchemaOrg.astro";
 import BlogCta from "@/components/sections/blog/BlogCta.astro";
 import BlogHero from "@/components/sections/blog/BlogHero.astro";
 import CategoryFilters from "@/components/sections/blog/CategoryFilters.astro";
 import FeaturedPost from "@/components/sections/blog/FeaturedPost.astro";
 import NewsletterSignup from "@/components/sections/blog/NewsletterSignup.astro";
 import PostGrid from "@/components/sections/blog/PostGrid.astro";
+import { business } from "@/data/business";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
@@ -19,12 +21,34 @@ const gridPosts = sorted.filter((p) => p.id !== featuredPost?.id);
 function wordCount(body: string) {
 	return body.split(/\s+/).filter(Boolean).length;
 }
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	itemListElement: [
+		{
+			"@type": "ListItem",
+			position: 1,
+			name: "Home",
+			item: business.url,
+		},
+		{
+			"@type": "ListItem",
+			position: 2,
+			name: "Blog",
+			item: `${business.url}/blog/`,
+		},
+	],
+};
 ---
 
 <BaseLayout
   title="The Honest Take | AI Insights from number6.ai"
   description="Practical, honest writing about AI for businesses. Guides, opinions, case studies, and technical deep-dives from number6.ai. No hype, no buzzwords. Just useful thinking."
 >
+  <Fragment slot="head">
+    <SchemaOrg schemas={[breadcrumbSchema]} />
+  </Fragment>
   <BlogHero />
   <CategoryFilters />
 

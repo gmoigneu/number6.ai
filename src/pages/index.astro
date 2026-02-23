@@ -1,4 +1,5 @@
 ---
+import SchemaOrg from "@/components/SchemaOrg.astro";
 import FinalCta from "@/components/sections/FinalCta.astro";
 import Hero from "@/components/sections/Hero.astro";
 import HowWeWork from "@/components/sections/HowWeWork.astro";
@@ -9,10 +10,39 @@ import TrustBar from "@/components/sections/TrustBar.astro";
 import WhatWeDo from "@/components/sections/WhatWeDo.astro";
 import WhoItsFor from "@/components/sections/WhoItsFor.astro";
 import WhyNumber6 from "@/components/sections/WhyNumber6.astro";
+import { business } from "@/data/business";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const organizationSchema = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	name: business.name,
+	url: business.url,
+	logo: business.logo,
+	description: business.description,
+	email: business.email,
+	sameAs: [business.linkedin],
+	areaServed: business.areaServed,
+	address: business.locations.map((loc) => ({
+		"@type": "PostalAddress",
+		addressLocality: loc.city,
+		addressRegion: loc.region || undefined,
+		addressCountry: loc.country,
+	})),
+};
+
+const websiteSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	name: business.name,
+	url: business.url,
+};
 ---
 
 <BaseLayout>
+  <Fragment slot="head">
+    <SchemaOrg schemas={[organizationSchema, websiteSchema]} />
+  </Fragment>
   <Hero />
   <TrustBar />
   <TheProblem />

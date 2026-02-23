@@ -8,16 +8,16 @@ export interface Author {
 }
 
 export const authors: Record<string, Author> = {
-	"g": {
-		name: "G.",
+	g: {
+		name: "Guillaume M.",
 		role: "Partner",
 		location: "Houston, TX",
 		bio: "G. helps businesses cut through the AI hype and build solutions that actually work. Before number6, he spent 20 years developing ecommerce and automation systems.",
 		linkedin: "https://www.linkedin.com/in/",
 		avatar: "/images/authors/nils.jpg",
 	},
-	"gq": {
-		name: "GQ.",
+	gq: {
+		name: "Greg Q.",
 		role: "Partner",
 		location: "Manchester, UK",
 		bio: "GQ. brings a decade of experience in digital transformation and AI strategy to number6. He specialises in helping teams adopt AI tools that fit their workflow.",

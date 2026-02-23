@@ -1,4 +1,5 @@
 ---
+import SchemaOrg from "@/components/SchemaOrg.astro";
 import BundlePackages from "@/components/sections/services/BundlePackages.astro";
 import HowServicesWork from "@/components/sections/services/HowServicesWork.astro";
 import PricingNotes from "@/components/sections/services/PricingNotes.astro";
@@ -8,13 +9,141 @@ import TrackBuild from "@/components/sections/services/TrackBuild.astro";
 import TrackGrow from "@/components/sections/services/TrackGrow.astro";
 import TrackLearn from "@/components/sections/services/TrackLearn.astro";
 import TrackPlan from "@/components/sections/services/TrackPlan.astro";
+import { business } from "@/data/business";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const provider = {
+	"@type": "Organization",
+	name: business.name,
+	url: business.url,
+};
+
+function serviceSchema(
+	name: string,
+	description: string,
+	price: string,
+	unit?: string,
+) {
+	return {
+		"@type": "Service",
+		name,
+		description,
+		provider,
+		offers: {
+			"@type": "Offer",
+			priceSpecification: {
+				"@type": "UnitPriceSpecification",
+				price,
+				priceCurrency: "USD",
+				...(unit && { unitText: unit }),
+			},
+		},
+	};
+}
+
+const services = [
+	serviceSchema(
+		"AI Kickstart",
+		"Half-day AI workshop for teams up to 15 people with live demos, hands-on exercises, and 30-day email support.",
+		"2500",
+	),
+	serviceSchema(
+		"AI Foundations",
+		"Full-day intensive for up to 20 participants covering advanced prompt engineering, AI tool landscape, and custom AI playbook.",
+		"5000",
+	),
+	serviceSchema(
+		"AI Coaching",
+		"Private 1-on-1 executive AI coaching sessions. 4 sessions over 4-6 weeks with custom curriculum.",
+		"3000",
+	),
+	serviceSchema(
+		"Team Training",
+		"4-week cohort course with progressive curriculum, async materials, and certificates for up to 15 participants.",
+		"8000",
+	),
+	serviceSchema(
+		"AI Readiness Index",
+		"One-week assessment across 6 dimensions with scored report, top 5 opportunities, and executive summary.",
+		"3500",
+	),
+	serviceSchema(
+		"AI Strategy & Roadmap",
+		"Comprehensive 3-4 week strategy with stakeholder interviews, 12-month roadmap, and 90-day advisory.",
+		"12000",
+	),
+	serviceSchema(
+		"AI Workflow Audit",
+		"Department-focused 2-3 week engagement with workflow mapping, tool recommendations, and savings projections.",
+		"6000",
+	),
+	serviceSchema(
+		"AI Pilot Project",
+		"End-to-end build of one AI use case including solution design, 4-8 week development, and team training.",
+		"10000",
+	),
+	serviceSchema(
+		"Custom AI Agent",
+		"Purpose-built AI agent with memory, context, and tools. Includes agent design, knowledge base, and monitoring.",
+		"18000",
+	),
+	serviceSchema(
+		"RAG Knowledge System",
+		"Enterprise-grade knowledge retrieval system with data audit, vector DB, LLM with citations, and admin dashboard.",
+		"35000",
+	),
+	serviceSchema(
+		"Advisory Retainer - Essentials",
+		"Fractional AI advisor with 2 sessions per month, priority email support, and quarterly reviews.",
+		"3000",
+		"month",
+	),
+	serviceSchema(
+		"Advisory Retainer - Growth",
+		"Everything in Essentials plus 4 sessions per month, 8 hours hands-on work, and dedicated Slack channel.",
+		"6000",
+		"month",
+	),
+	serviceSchema(
+		"Managed AI Services",
+		"Ongoing system management including monitoring, monthly reports, prompt optimization, and cost optimization.",
+		"2000",
+		"month",
+	),
+];
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	itemListElement: [
+		{
+			"@type": "ListItem",
+			position: 1,
+			name: "Home",
+			item: business.url,
+		},
+		{
+			"@type": "ListItem",
+			position: 2,
+			name: "Services & Pricing",
+			item: `${business.url}/services/`,
+		},
+	],
+};
+
+const schemas = [
+	{ "@context": "https://schema.org", "@graph": services },
+	breadcrumbSchema,
+];
 ---
 
 <BaseLayout
   title="Services & Pricing | number6.ai"
   description="Transparent pricing for AI consulting. Training, strategy, custom solutions, and ongoing partnership. No hidden fees, no surprises."
 >
+  <Fragment slot="head">
+    <SchemaOrg schemas={schemas} />
+  </Fragment>
   <ServicesHero />
   <HowServicesWork />
   <TrackLearn />

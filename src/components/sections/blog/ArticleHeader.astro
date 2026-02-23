@@ -21,9 +21,10 @@ const formattedDate = date.toLocaleDateString("en-US", {
 	day: "numeric",
 	year: "numeric",
 });
+const isoDate = date.toISOString().split("T")[0];
 ---
 
-<header class="flex flex-col items-center gap-8 px-16 pt-20 pb-12 w-full">
+<header class="flex flex-col items-center gap-8 px-4 md:px-8 lg:px-16 pt-20 pb-12 w-full">
   <a href={`/blog/category/${category}`}>
     <span class="inline-block font-heading text-[11px] font-semibold tracking-[1.5px] text-accent-foreground bg-accent rounded-full px-4 py-1.5 uppercase">
       {categoryData?.name ?? category}
@@ -38,7 +39,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
     </p>
   )}
   <div class="flex items-center gap-4">
-    <span class="font-body text-[13px] text-[#AAAAAA]">{formattedDate}</span>
+    <time datetime={isoDate} class="font-body text-[13px] text-[#AAAAAA]">{formattedDate}</time>
     <span class="font-body text-[13px] text-[#AAAAAA]">&middot;</span>
     <span class="font-body text-[13px] text-[#AAAAAA]">{readTime} min read</span>
   </div>

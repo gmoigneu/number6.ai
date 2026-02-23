@@ -33,7 +33,7 @@ const services = [
 ];
 ---
 
-<section class="flex flex-col gap-16 px-16 py-[100px] w-full">
+<section class="flex flex-col gap-16 px-4 md:px-8 lg:px-16 py-[100px] w-full">
   <!-- Header -->
   <div class="flex flex-col items-center gap-4 w-full">
     <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">WHAT WE DO</span>
@@ -53,7 +53,7 @@ const services = [
         <span class="font-heading text-lg font-bold tracking-[1px] text-foreground">{service.title}</span>
         <span class="font-heading text-sm font-semibold text-foreground">{service.subtitle}</span>
         <p class="font-body text-sm text-muted-foreground leading-relaxed flex-1">{service.description}</p>
-        <a href="/services/companies" class="flex items-center gap-2 font-heading text-xs font-semibold tracking-[1px] text-accent hover:text-accent/80 transition-colors">
+        <a href="/services" class="flex items-center gap-2 font-heading text-xs font-semibold tracking-[1px] text-accent hover:text-accent/80 transition-colors">
           LEARN MORE
           <ArrowRight className="h-3.5 w-3.5" />
         </a>

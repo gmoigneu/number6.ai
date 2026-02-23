@@ -2,7 +2,7 @@
 
 ---
 
-<header class="bg-foreground flex items-center justify-between px-16 py-5">
+<header class="bg-foreground flex items-center justify-between px-4 md:px-8 lg:px-16 py-5 relative">
   <a href="/" class="flex items-center gap-3.5">
     <div class="flex h-9 w-9 items-center justify-center bg-accent">
       <span class="font-heading text-xl font-bold text-accent-foreground">6</span>
@@ -10,14 +10,77 @@
     <span class="font-heading text-base font-bold tracking-[3px] text-accent-foreground">NUMBER6</span>
   </a>
 
-  <nav class="flex items-center gap-8">
+  <nav class="hidden md:flex items-center gap-8">
     <a href="/services" class="font-heading text-sm font-medium text-muted-foreground hover:text-accent-foreground transition-colors">Services</a>
     <a href="/about" class="font-heading text-sm font-medium text-muted-foreground hover:text-accent-foreground transition-colors">About</a>
     <a href="/blog" class="font-heading text-sm font-medium text-muted-foreground hover:text-accent-foreground transition-colors">Blog</a>
     <a href="/contact" class="font-heading text-sm font-medium text-muted-foreground hover:text-accent-foreground transition-colors">Contact</a>
   </nav>
 
-  <a href="/contact" class="flex items-center gap-2.5 bg-accent px-6 py-2.5 font-heading text-xs font-semibold tracking-[1px] text-accent-foreground hover:bg-accent/90 transition-colors">
+  <a href="/contact" class="hidden md:flex items-center gap-2.5 bg-accent px-6 py-2.5 font-heading text-xs font-semibold tracking-[1px] text-accent-foreground hover:bg-accent/90 transition-colors">
     BOOK A CALL
   </a>
+
+  <!-- Mobile hamburger button -->
+  <button
+    id="mobile-menu-btn"
+    class="md:hidden flex flex-col gap-1.5 p-2"
+    aria-label="Open menu"
+    aria-expanded="false"
+  >
+    <span class="block w-6 h-0.5 bg-accent-foreground transition-transform" id="hamburger-top"></span>
+    <span class="block w-6 h-0.5 bg-accent-foreground transition-opacity" id="hamburger-mid"></span>
+    <span class="block w-6 h-0.5 bg-accent-foreground transition-transform" id="hamburger-bot"></span>
+  </button>
+
+  <!-- Mobile menu overlay -->
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 bg-foreground z-50 flex flex-col items-center justify-center gap-8 hidden"
+  >
+    <button
+      id="mobile-menu-close"
+      class="absolute top-5 right-4 p-2"
+      aria-label="Close menu"
+    >
+      <svg class="w-6 h-6 text-accent-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <a href="/services" class="font-heading text-2xl font-medium text-accent-foreground hover:text-accent transition-colors">Services</a>
+    <a href="/about" class="font-heading text-2xl font-medium text-accent-foreground hover:text-accent transition-colors">About</a>
+    <a href="/blog" class="font-heading text-2xl font-medium text-accent-foreground hover:text-accent transition-colors">Blog</a>
+    <a href="/contact" class="font-heading text-2xl font-medium text-accent-foreground hover:text-accent transition-colors">Contact</a>
+
+    <a href="/contact" class="mt-4 flex items-center gap-2.5 bg-accent px-8 py-3 font-heading text-sm font-semibold tracking-[1px] text-accent-foreground hover:bg-accent/90 transition-colors">
+      BOOK A CALL
+    </a>
+  </div>
 </header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const closeBtn = document.getElementById('mobile-menu-close');
+
+  function openMenu() {
+    menu?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    btn?.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeMenu() {
+    menu?.classList.add('hidden');
+    document.body.style.overflow = '';
+    btn?.setAttribute('aria-expanded', 'false');
+  }
+
+  btn?.addEventListener('click', openMenu);
+  closeBtn?.addEventListener('click', closeMenu);
+
+  // Close on nav link click
+  menu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>

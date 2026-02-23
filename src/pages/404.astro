@@ -1,0 +1,30 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Page Not Found | number6.ai" description="The page you're looking for doesn't exist or has been moved.">
+  <Fragment slot="head">
+    <meta name="robots" content="noindex" />
+  </Fragment>
+  <section class="flex flex-col items-center gap-8 px-4 md:px-8 lg:px-16 py-32 text-center">
+    <span class="font-heading text-[120px] font-bold text-accent leading-none tracking-[-4px]">404</span>
+    <h1 class="font-heading text-4xl font-bold text-foreground tracking-[-1px]">Page not found</h1>
+    <p class="font-body text-lg text-muted-foreground max-w-[500px]">
+      The page you're looking for doesn't exist or has been moved. Here are some places to start:
+    </p>
+    <nav class="flex flex-wrap justify-center gap-4 mt-4">
+      <a href="/" class="font-heading text-sm font-semibold tracking-[1px] bg-foreground text-accent-foreground px-6 py-3 hover:bg-foreground/90 transition-colors">
+        HOME
+      </a>
+      <a href="/services" class="font-heading text-sm font-semibold tracking-[1px] border-2 border-foreground text-foreground px-6 py-3 hover:bg-foreground hover:text-accent-foreground transition-colors">
+        SERVICES
+      </a>
+      <a href="/blog" class="font-heading text-sm font-semibold tracking-[1px] border-2 border-foreground text-foreground px-6 py-3 hover:bg-foreground hover:text-accent-foreground transition-colors">
+        BLOG
+      </a>
+      <a href="/contact" class="font-heading text-sm font-semibold tracking-[1px] border-2 border-foreground text-foreground px-6 py-3 hover:bg-foreground hover:text-accent-foreground transition-colors">
+        CONTACT
+      </a>
+    </nav>
+  </section>
+</BaseLayout>
