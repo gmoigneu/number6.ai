@@ -25,13 +25,13 @@ const steps = [
   <!-- Header -->
   <div class="flex flex-col items-center gap-4 w-full">
     <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">HOW WE WORK</span>
-    <h2 class="font-heading text-5xl font-bold text-primary-foreground text-center leading-[1.1] tracking-[-2px] max-w-[800px]">
+    <h2 class="font-heading text-4xl lg:text-5xl font-bold text-primary-foreground text-center leading-[1.1] tracking-[-2px] max-w-[800px]">
       Plain English.<br />Here's how it works.
     </h2>
   </div>
 
   <!-- Steps row -->
-  <div class="grid grid-cols-3 gap-0 w-full">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 w-full">
     {steps.map((step) => (
       <div class="flex flex-col gap-6 p-10 border border-border h-full">
         <span class="font-heading text-[64px] font-bold text-accent tracking-[-2px]">{step.num}</span>

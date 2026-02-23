@@ -24,18 +24,18 @@ const timeline = [
 <section class="flex flex-col gap-12 bg-foreground px-4 md:px-8 lg:px-16 py-20 w-full">
   <div class="flex flex-col items-center gap-4 w-full">
     <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">HOW WE GOT HERE</span>
-    <h2 class="font-heading text-[40px] font-bold text-background text-center tracking-[-1.5px]">
+    <h2 class="font-heading text-3xl lg:text-[40px] font-bold text-background text-center tracking-[-1.5px]">
       A brief timeline.
     </h2>
   </div>
 
-  <div class="flex w-full">
+  <div class="flex flex-col md:flex-row w-full">
     {timeline.map((item, i) => (
       <div class:list={[
         "flex flex-col gap-4 flex-1 py-8",
-        i === 0 && "pr-8 border-r border-border",
-        i === 1 && "px-8 border-r border-border",
-        i === 2 && "pl-8",
+        i === 0 && "pb-8 md:pb-8 md:pr-8 border-b md:border-b-0 md:border-r border-border",
+        i === 1 && "pb-8 md:pb-8 md:px-8 border-b md:border-b-0 md:border-r border-border",
+        i === 2 && "md:pl-8",
       ]}>
         <span class="font-heading text-[32px] font-bold text-accent tracking-[-1px]">{item.year}</span>
         <p class="font-body text-sm text-secondary-foreground leading-[1.7]">{item.description}</p>

@@ -29,7 +29,7 @@ const audiences = [
   <!-- Header -->
   <div class="flex flex-col items-center gap-5 w-full">
     <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">WHO IT'S FOR</span>
-    <h2 class="font-heading text-5xl font-bold text-foreground text-center leading-[1.1] tracking-[-2px] max-w-[900px]">
+    <h2 class="font-heading text-4xl lg:text-5xl font-bold text-foreground text-center leading-[1.1] tracking-[-2px] max-w-[900px]">
       We work with businesses that<br />want to move, not just talk.
     </h2>
     <p class="font-body text-base text-muted-foreground text-center leading-relaxed max-w-[650px]">
@@ -38,7 +38,7 @@ const audiences = [
   </div>
 
   <!-- Audience cards -->
-  <div class="grid grid-cols-4 gap-0 w-full">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 w-full">
     {audiences.map(({ Icon, title, description }) => (
       <div class="flex flex-col gap-4 bg-background p-8 border-2 border-foreground -ml-[2px] first:ml-0">
         <Icon className="h-8 w-8 text-accent" />

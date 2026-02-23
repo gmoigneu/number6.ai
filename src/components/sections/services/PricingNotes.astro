@@ -34,14 +34,14 @@ const col2 = [
   <!-- Header -->
   <div class="flex flex-col gap-3">
     <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">GOOD TO KNOW</span>
-    <h2 class="font-heading text-[40px] font-bold text-foreground tracking-[-2px]">Pricing notes.</h2>
+    <h2 class="font-heading text-3xl lg:text-[40px] font-bold text-foreground tracking-[-2px]">Pricing notes.</h2>
   </div>
 
   <!-- Divider -->
   <div class="h-0.5 w-full bg-foreground"></div>
 
   <!-- Two-column grid -->
-  <div class="grid grid-cols-2 gap-12 w-full">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
     <div class="flex flex-col gap-8">
       {col1.map((note) => (
         <div class="flex flex-col gap-2">

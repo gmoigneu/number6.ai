@@ -32,7 +32,7 @@ const tracks = [
 ---
 
 <section class="flex flex-col items-center gap-12 px-4 md:px-8 lg:px-16 py-20 w-full">
-  <h2 class="font-heading text-[40px] font-bold text-foreground text-center tracking-[-2px]">
+  <h2 class="font-heading text-3xl lg:text-[40px] font-bold text-foreground text-center tracking-[-2px]">
     Four tracks. One clear path.
   </h2>
 
@@ -40,7 +40,7 @@ const tracks = [
     We've organized everything we do into four tracks: Learn, Plan, Build, and Grow. Most clients start with Learn or Plan, then progress naturally. Every engagement includes direct access to our senior team.
   </p>
 
-  <div class="flex w-full">
+  <div class="flex flex-col md:flex-row w-full">
     {tracks.map((t) => (
       <div class:list={[
         "flex flex-col gap-3 py-8 px-7 flex-1",

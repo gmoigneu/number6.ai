@@ -25,14 +25,14 @@ const { title, description, lastUpdated, breadcrumbLabel, toc } = Astro.props;
       <span class="font-body text-[13px] text-[#AAAAAA]">/</span>
       <span class="font-body text-[13px] font-medium text-foreground">{breadcrumbLabel}</span>
     </nav>
-    <h1 class="font-heading text-5xl font-bold tracking-[-2px] text-foreground">{title}</h1>
+    <h1 class="font-heading text-4xl lg:text-5xl font-bold tracking-[-2px] text-foreground">{title}</h1>
     <p class="font-body text-sm text-muted-foreground">Last updated: {lastUpdated}</p>
   </div>
 
   <!-- Content Area: TOC Sidebar + Body -->
-  <div class="flex gap-16 px-4 md:px-8 lg:px-16 py-12 w-full">
+  <div class="flex flex-col lg:flex-row gap-16 px-4 md:px-8 lg:px-16 py-12 w-full">
     <!-- TOC Sidebar -->
-    <aside class="w-[260px] shrink-0 sticky top-8 self-start">
+    <aside class="w-full lg:w-[260px] shrink-0 lg:sticky top-8 self-start">
       <div class="flex flex-col gap-4">
         <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">ON THIS PAGE</span>
         <nav class="flex flex-col">

@@ -41,10 +41,10 @@ const topCards = [
 
 <section class="flex flex-col gap-12 px-4 md:px-8 lg:px-16 py-20 w-full">
   <!-- Header -->
-  <div class="flex items-end justify-between w-full">
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 w-full">
     <div class="flex flex-col gap-3">
       <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">TRACK 02</span>
-      <span class="font-heading text-[64px] font-bold text-foreground tracking-[-2px] leading-none">PLAN</span>
+      <span class="font-heading text-4xl lg:text-[64px] font-bold text-foreground tracking-[-2px] leading-none">PLAN</span>
     </div>
     <p class="font-body text-base text-muted-foreground leading-relaxed max-w-[400px]">
       For businesses that want a strategy<br />before they spend.
@@ -55,7 +55,7 @@ const topCards = [
   <div class="h-1 w-full bg-foreground"></div>
 
   <!-- Top cards -->
-  <div class="flex gap-5 w-full">
+  <div class="flex flex-col md:flex-row gap-5 w-full">
     {topCards.map((svc) => (
       <div class="flex flex-col gap-5 p-8 border-2 border-foreground flex-1">
         <h3 class="font-heading text-[22px] font-bold text-foreground tracking-[-1px]">{svc.title}</h3>
@@ -77,7 +77,7 @@ const topCards = [
   </div>
 
   <!-- Wide bottom card: AI Workflow Audit -->
-  <div class="flex gap-16 p-10 border-2 border-foreground w-full">
+  <div class="flex flex-col md:flex-row gap-16 p-10 border-2 border-foreground w-full">
     <div class="flex flex-col gap-5 flex-1">
       <h3 class="font-heading text-[22px] font-bold text-foreground tracking-[-1px]">AI Workflow Audit</h3>
       <span class="font-heading text-[10px] font-semibold tracking-[2px] text-accent">DEPARTMENT DEEP-DIVE</span>
@@ -88,7 +88,7 @@ const topCards = [
         Best for: Operations leaders or companies that want to start with one area before going company-wide.
       </p>
     </div>
-    <div class="flex flex-col gap-4 w-[350px] shrink-0">
+    <div class="flex flex-col gap-4 w-full md:w-[350px] shrink-0">
       <div class="flex flex-col gap-2">
         <span class="font-heading text-[10px] font-semibold tracking-[1px] text-muted-foreground">INCLUDES</span>
         <ul class="font-body text-xs text-muted-foreground leading-relaxed">

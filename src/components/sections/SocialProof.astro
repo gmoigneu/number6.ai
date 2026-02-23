@@ -15,19 +15,19 @@ const stats = [
   <!-- Header -->
   <div class="flex flex-col items-center gap-4 w-full">
     <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">RESULTS</span>
-    <h2 class="font-heading text-[56px] font-bold text-foreground text-center tracking-[-2px]">Real work. Real numbers.</h2>
+    <h2 class="font-heading text-4xl lg:text-[56px] font-bold text-foreground text-center tracking-[-2px]">Real work. Real numbers.</h2>
   </div>
 
   <!-- Quote block -->
   <div class="flex flex-col items-center gap-6 border-2 border-foreground px-4 md:px-8 lg:px-16 py-12 w-full">
-    <span class="font-heading text-[80px] font-bold text-accent leading-[0.5]">&ldquo;</span>
+    <span class="font-heading text-5xl lg:text-[80px] font-bold text-accent leading-[0.5]">&ldquo;</span>
     <p class="font-body text-lg italic text-foreground text-center leading-[1.7] max-w-[800px]">
       Most businesses we assess are sitting on 3-5 AI opportunities they haven't spotted yet. The average number6 engagement starts saving people real time within 90 days.
     </p>
   </div>
 
   <!-- Stats row -->
-  <div class="grid grid-cols-4 gap-0 w-full">
+  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-0 w-full">
     {stats.map((stat) => (
       <div class="flex flex-col items-center gap-3 border border-foreground p-8">
         <span class={`font-heading text-4xl font-bold tracking-[-1px] ${stat.highlight ? "text-accent" : "text-foreground"}`}>

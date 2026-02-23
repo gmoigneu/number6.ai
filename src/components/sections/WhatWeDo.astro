@@ -37,7 +37,7 @@ const services = [
   <!-- Header -->
   <div class="flex flex-col items-center gap-4 w-full">
     <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">WHAT WE DO</span>
-    <h2 class="font-heading text-5xl font-bold text-foreground text-center leading-[1.1] tracking-[-2px] max-w-[900px]">
+    <h2 class="font-heading text-4xl lg:text-5xl font-bold text-foreground text-center leading-[1.1] tracking-[-2px] max-w-[900px]">
       From "what is this?" to<br />"how did we live without it?"
     </h2>
     <p class="font-body text-base text-muted-foreground text-center leading-relaxed max-w-[600px]">
@@ -46,7 +46,7 @@ const services = [
   </div>
 
   <!-- Cards row -->
-  <div class="grid grid-cols-4 gap-0 w-full">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 w-full">
     {services.map((service) => (
       <div class="flex flex-col gap-5 p-8 border border-foreground h-full">
         <span class="font-heading text-[44px] font-bold text-accent tracking-[-1px]">{service.num}</span>
