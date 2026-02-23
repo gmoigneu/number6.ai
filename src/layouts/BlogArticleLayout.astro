@@ -1,5 +1,6 @@
 ---
 import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
 import ReadingProgressBar from "@/components/sections/blog/ReadingProgressBar";
 import "@/styles/global.css";
 
@@ -28,7 +29,7 @@ const {
 const canonicalUrl = Astro.url.href;
 ---
 
-<html lang="en">
+<html lang="en" class="bg-background">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -66,20 +67,7 @@ const canonicalUrl = Astro.url.href;
   </head>
   <body class="min-h-screen flex flex-col">
     <ReadingProgressBar client:load />
-
-    <!-- Minimal reading header -->
-    <header class="bg-foreground flex items-center justify-between px-16 py-4">
-      <a href="/" class="flex items-center gap-3.5">
-        <div class="flex h-8 w-8 items-center justify-center bg-accent">
-          <span class="font-heading text-lg font-bold text-accent-foreground">6</span>
-        </div>
-        <span class="font-heading text-sm font-bold tracking-[3px] text-accent-foreground">NUMBER6</span>
-      </a>
-      <a href="/blog" class="flex items-center gap-2 group">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted-foreground"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
-        <span class="font-heading text-[13px] font-medium text-muted-foreground group-hover:text-accent-foreground transition-colors">Back to The Honest Take</span>
-      </a>
-    </header>
+    <Header />
 
     <main class="flex-1">
       <slot />
