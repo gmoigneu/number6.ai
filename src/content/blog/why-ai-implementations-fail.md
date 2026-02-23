@@ -2,7 +2,7 @@
 title: "Why Most AI Implementations Fail (And What to Do Instead)"
 subtitle: "Three patterns that separate the companies getting real value from AI and everyone else burning budget on demos that never ship."
 date: 2026-02-18
-author: partner-houston
+author: g
 category: ai-for-humans
 tags: ["ai strategy", "implementation", "case study"]
 excerpt: "Most companies rush to adopt AI without understanding what makes it stick. After working with dozens of businesses, we've identified the three patterns that separate successful AI projects from expensive failures."

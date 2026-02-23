@@ -50,8 +50,8 @@ For syntax highlighting, use Astro's built-in Shiki integration (already bundled
 Define author data as a simple TypeScript map in `src/data/authors.ts`:
 ```ts
 export const authors = {
-  "partner-houston": { name: "Nils Löhndorf", role: "Partner", location: "Houston, TX", ... },
-  "partner-manchester": { name: "...", role: "Partner", location: "Manchester, UK", ... },
+  "partner-houston": { name: "G.", role: "Partner", location: "Houston, TX", ... },
+  "partner-manchester": { name: "GQ.", role: "Partner", location: "Manchester, UK", ... },
 }
 ```
 Articles reference authors by key in frontmatter. No separate content collection needed for 2 authors.

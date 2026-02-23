@@ -8,7 +8,7 @@ const blog = defineCollection({
 		subtitle: z.string().optional(),
 		date: z.coerce.date(),
 		updated: z.coerce.date().optional(),
-		author: z.enum(["partner-houston", "partner-manchester"]),
+		author: z.enum(["g", "gq"]),
 		category: z.enum([
 			"ai-for-humans",
 			"honest-take",

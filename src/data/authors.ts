@@ -8,20 +8,20 @@ export interface Author {
 }
 
 export const authors: Record<string, Author> = {
-	"partner-houston": {
-		name: "Nils Löhndorf",
+	"g": {
+		name: "G.",
 		role: "Partner",
 		location: "Houston, TX",
-		bio: "Nils helps businesses cut through the AI hype and build solutions that actually work. Before number6, he spent 15 years in enterprise technology and operations research.",
-		linkedin: "https://www.linkedin.com/in/nilsloehndorf/",
+		bio: "G. helps businesses cut through the AI hype and build solutions that actually work. Before number6, he spent 20 years developing ecommerce and automation systems.",
+		linkedin: "https://www.linkedin.com/in/",
 		avatar: "/images/authors/nils.jpg",
 	},
-	"partner-manchester": {
-		name: "Adam Sherwood",
+	"gq": {
+		name: "GQ.",
 		role: "Partner",
 		location: "Manchester, UK",
-		bio: "Adam brings a decade of experience in digital transformation and AI strategy to number6. He specialises in helping teams adopt AI tools that fit their workflow.",
-		linkedin: "https://www.linkedin.com/in/adamsherwood/",
+		bio: "GQ. brings a decade of experience in digital transformation and AI strategy to number6. He specialises in helping teams adopt AI tools that fit their workflow.",
+		linkedin: "https://www.linkedin.com/in/",
 		avatar: "/images/authors/adam.jpg",
 	},
 };

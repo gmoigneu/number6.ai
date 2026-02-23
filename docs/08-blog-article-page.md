@@ -191,7 +191,7 @@ title: "Article Title Here"
 subtitle: "Optional subtitle or deck"  # optional
 date: 2026-02-22
 updated: 2026-02-22  # optional, shown if different from date
-author: "partner-houston"  # or "partner-manchester"
+author: "gt"  # or "gq"
 category: "honest-take"  # one of: ai-for-humans, honest-take, 90-day-wins, behind-the-agent
 tags: ["ai strategy", "prompt engineering"]  # freeform tags
 excerpt: "A 150-160 character summary for meta descriptions and cards."
