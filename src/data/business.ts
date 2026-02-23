@@ -6,7 +6,7 @@ export const business = {
 	description:
 		"AI consulting agency helping businesses understand, adopt, and build with AI. Training, strategy, custom solutions, and ongoing partnerships.",
 	logo: "https://number6.ai/favicon.svg",
-	linkedin: "https://www.linkedin.com/in/guillaumemoigneu",
+	linkedin: "https://www.linkedin.com/company/number6-ai",
 	locations: [
 		{
 			city: "Houston",

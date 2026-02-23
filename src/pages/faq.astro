@@ -1,0 +1,200 @@
+---
+import SchemaOrg from "@/components/SchemaOrg.astro";
+import { business } from "@/data/business";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+interface FAQ {
+	question: string;
+	answer: string;
+}
+
+const faqs: FAQ[] = [
+	{
+		question: "What is AI consulting?",
+		answer:
+			"AI consulting means working with an external expert to help your business understand, adopt, and benefit from artificial intelligence. At number6, that typically means one of four things: training your team to use AI tools effectively, assessing where AI will genuinely help your business, building a custom AI solution for a specific workflow, or acting as an ongoing AI partner as the technology evolves.",
+	},
+	{
+		question: "What is the number6 AI Readiness Index™?",
+		answer:
+			"The number6 AI Readiness Index™ is our proprietary evaluation framework. It assesses a business across six dimensions — people, process, data, technology, leadership, and culture — to produce a prioritised roadmap. Unlike generic AI readiness reports, the output is a clear action plan with real costs and timelines, showing exactly where AI will have the most impact and what to do first. A typical assessment takes two to three weeks.",
+	},
+	{
+		question: "Do you publish your prices?",
+		answer:
+			"Yes. We publish our packages and pricing openly on the site. Most AI consultancies hide their rates and make you sit through a discovery call before revealing costs. We think you deserve to know what things cost before the first conversation.",
+	},
+	{
+		question: "How long does a typical engagement take?",
+		answer:
+			"Most clients see a working solution within 30 to 90 days of the initial discovery call. AI Foundations training can be delivered in a single day or spread across a few weeks. Strategy assessments typically take two to three weeks. Custom AI builds depend on complexity but rarely exceed 90 days for an initial deployment.",
+	},
+	{
+		question: "How does the process work?",
+		answer:
+			"Every engagement starts with a free 30-minute discovery call where we listen to your situation. We then produce an honest plan — identifying where AI will genuinely help and where it won't, with real costs and timelines. We build alongside your team and train them as we go. When we leave, the solution keeps working and your people know how to run it.",
+	},
+	{
+		question: "Do you work with small and mid-size businesses?",
+		answer:
+			"Yes. Our typical clients have between 10 and 500 employees — large enough to benefit from AI, nimble enough to actually adopt it. We focus specifically on SMBs because they move faster, make decisions more quickly, and tend to get more value from AI implementations than large enterprises with lengthy procurement cycles.",
+	},
+	{
+		question: "Where are you based? Do you work internationally?",
+		answer:
+			"We are based in Houston, TX (Americas) and Manchester, UK (Europe). We serve clients across the US, UK, and EU with overlapping hours that cover most business timezones. The work is predominantly remote, with on-site options available.",
+	},
+	{
+		question: "What's the difference between AI training and AI strategy?",
+		answer:
+			"AI training focuses on your team's ability to use AI tools day-to-day — workshops, coaching, and hands-on practice that take people from 'what is this?' to actually using it. AI strategy focuses on your business's readiness to adopt AI at a structural level — identifying the right opportunities, the right tools, and the right order to pursue them. Most clients benefit from both.",
+	},
+	{
+		question: "Will AI replace our employees?",
+		answer:
+			"In most SMB contexts, AI replaces tasks, not people. The businesses that get the most from AI are the ones that retrain their teams to work alongside it rather than treating it as a headcount-reduction tool. We train your team as part of every project because the goal is AI adoption, not AI dependence.",
+	},
+	{
+		question: "Do we need to be technical to work with you?",
+		answer:
+			"No. We explain everything in plain English. You do not need to understand how large language models work to benefit from them. Our job is to translate between what the technology can do and what your business actually needs.",
+	},
+	{
+		question: "What industries do you work with?",
+		answer:
+			"We work across professional services (law firms, accountancies, consultancies), marketing and creative agencies, operations-heavy businesses (logistics, manufacturing, field services), and tech-forward SMBs. If your team does repetitive knowledge work, we can likely help — AI doesn't care about industry verticals.",
+	},
+	{
+		question: "What is a RAG-powered knowledge base?",
+		answer:
+			"RAG stands for Retrieval-Augmented Generation. A RAG-powered knowledge base is an AI system that can search and reason over your specific documents, policies, or data — not just generic internet knowledge. Instead of staff searching through shared drives or asking colleagues, they ask the system and it retrieves the right answer from your actual content.",
+	},
+	{
+		question: 'What does "Fractional Chief AI Officer" mean?',
+		answer:
+			"A Fractional Chief AI Officer is an ongoing AI partnership where we act as your embedded AI expert without the full-time cost. We monitor your AI tools, keep your team up to date as the technology changes, and help you identify new opportunities as your business grows. It's for businesses that want to stay ahead of AI without hiring a full-time technical leader.",
+	},
+	{
+		question: "Do you build custom tools or use off-the-shelf AI products?",
+		answer:
+			"Both, depending on what solves the problem. Off-the-shelf AI tools (ChatGPT, Notion AI, Copilot, etc.) are often the right answer — faster to deploy and lower cost. Custom builds make sense when a specific workflow needs automation that no existing tool covers, or when your business has unique data that gives a custom system a significant advantage.",
+	},
+	{
+		question: "Why do most AI projects fail?",
+		answer:
+			"The most common failure mode is starting with 'we need to use AI' instead of 'we have a problem that might be solvable with AI.' Other frequent causes: skipping baseline measurement so you can't prove ROI, choosing tools based on hype rather than fit, and not involving end users until it's too late. A good AI problem statement is specific enough to measure, painful enough to justify investment, and repetitive enough to benefit from automation.",
+	},
+	{
+		question: "How do you measure success?",
+		answer:
+			"We track actual usage and time data with clients during and after deployment. Across our engagements, businesses that complete a number6 AI implementation typically save five to ten hours per employee per week on the targeted process. We define success before we start — measurable outcomes agreed in advance, not demo performance.",
+	},
+	{
+		question: "What happens after the engagement ends?",
+		answer:
+			"At the end of every engagement, your team knows how to run the solution we built. We don't create dependency. If you want ongoing support, our AI Partnership model provides that — but it's an option, not a requirement. 80% of clients return for additional projects after their first engagement.",
+	},
+	{
+		question: "How are you different from other AI consultancies?",
+		answer:
+			"Three things stand out. First, we publish our prices. Second, we'll tell you honestly when AI isn't the right answer for your problem. Third, you work directly with the senior people who built your solution — no junior handoff, no account managers in the middle. We're a two-person team with years of AI engineering experience, and that's exactly what you get.",
+	},
+	{
+		question: "What size team do you typically train?",
+		answer:
+			"Typical engagements train between 8 and 25 team members. Sessions can be delivered as a full-day workshop, half-day deep dives by department, or a series of shorter coaching sessions spread over several weeks — depending on what fits your team's schedule.",
+	},
+	{
+		question: "How do I get started?",
+		answer:
+			"Book a free 30-minute discovery call. No sales pressure, no pitch deck. We'll ask about your business and what you're trying to solve, and tell you honestly whether we can help and what it would cost.",
+	},
+];
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	itemListElement: [
+		{
+			"@type": "ListItem",
+			position: 1,
+			name: "Home",
+			item: business.url,
+		},
+		{
+			"@type": "ListItem",
+			position: 2,
+			name: "FAQ",
+			item: `${business.url}/faq/`,
+		},
+	],
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: faqs.map(({ question, answer }) => ({
+		"@type": "Question",
+		name: question,
+		acceptedAnswer: {
+			"@type": "Answer",
+			text: answer,
+		},
+	})),
+};
+---
+
+<BaseLayout
+  title="Frequently Asked Questions | number6.ai"
+  description="Answers to common questions about AI consulting, training, strategy, custom AI builds, pricing, and how number6.ai works with small and mid-size businesses."
+>
+  <Fragment slot="head">
+    <SchemaOrg schemas={[breadcrumbSchema, faqSchema]} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="flex flex-col items-center gap-6 px-4 md:px-8 lg:px-16 py-[80px] w-full bg-foreground">
+    <nav aria-label="Breadcrumb" class="flex items-center gap-2 font-body text-xs text-secondary-foreground">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span aria-hidden="true">/</span>
+      <span class="text-accent-foreground">FAQ</span>
+    </nav>
+    <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">ANSWERS</span>
+    <h1 class="font-heading text-4xl lg:text-5xl font-bold text-accent-foreground text-center leading-[1.1] tracking-[-2px] max-w-[800px]">
+      Frequently Asked Questions
+    </h1>
+    <p class="font-body text-base text-secondary-foreground text-center leading-relaxed max-w-[600px]">
+      Everything you need to know about working with number6 — from how we work to what things cost.
+    </p>
+  </section>
+
+  <!-- FAQ list -->
+  <section class="flex flex-col gap-0 px-4 md:px-8 lg:px-16 py-[80px] w-full max-w-[900px] mx-auto">
+    {faqs.map((faq, i) => (
+      <div class="flex flex-col gap-3 py-8 border-b border-foreground/20 last:border-b-0">
+        <h2 class="font-heading text-xl font-bold text-foreground tracking-[-0.5px] leading-snug">
+          {faq.question}
+        </h2>
+        <p class="font-body text-[15px] text-muted-foreground leading-[1.75]">
+          {faq.answer}
+        </p>
+      </div>
+    ))}
+  </section>
+
+  <!-- CTA -->
+  <section class="flex flex-col items-center gap-6 px-4 md:px-8 lg:px-16 py-[80px] w-full bg-muted">
+    <h2 class="font-heading text-3xl font-bold text-foreground text-center tracking-[-1px]">
+      Still have questions?
+    </h2>
+    <p class="font-body text-base text-muted-foreground text-center max-w-[500px] leading-relaxed">
+      Book a free 30-minute call. We'll answer anything and give you an honest view of whether we can help.
+    </p>
+    <a
+      href="/contact"
+      class="flex items-center gap-2.5 bg-accent px-8 py-3 font-heading text-sm font-semibold tracking-[1px] text-accent-foreground hover:bg-accent/90 transition-colors"
+    >
+      BOOK A FREE CALL
+    </a>
+  </section>
+</BaseLayout>
