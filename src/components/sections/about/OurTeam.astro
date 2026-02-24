@@ -1,51 +1,58 @@
-<section class="flex flex-col gap-12 bg-background px-4 md:px-8 lg:px-16 py-20 w-full">
+<section class="flex flex-col gap-16 px-4 md:px-8 lg:px-16 py-[100px] w-full">
   <!-- Header -->
-  <div class="flex flex-col gap-4 w-full">
+  <div class="flex flex-col gap-4 w-full max-w-[800px]">
     <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">OUR TEAM</span>
-    <h2 class="font-heading text-3xl lg:text-[40px] font-bold text-foreground leading-[1.1] tracking-[-1.5px]">
+    <h2 class="font-heading text-4xl lg:text-[56px] font-bold text-foreground tracking-[-2px] leading-[1.1]">
       Two people. You work<br />with both of us.
     </h2>
-    <p class="font-body text-base text-muted-foreground leading-[1.7] max-w-[700px]">
+    <p class="font-body text-base text-muted-foreground leading-[1.7]">
       When you work with number6, you work with us directly. No account managers, no junior associates, no outsourced developers. The people on this page are the people in your meetings and building your solutions.
     </p>
   </div>
 
   <!-- Partner Cards -->
-  <div class="flex flex-col md:flex-row gap-8 w-full">
-    <!-- Partner 1: Houston -->
-    <div class="flex flex-col border-2 border-foreground flex-1">
-      <div class="w-full h-[400px] bg-muted overflow-hidden">
-        <img src="/images/about/partner1.png" alt="Partner, Houston, TX" class="w-full h-full object-cover" />
-      </div>
-      <div class="flex flex-col gap-5 p-8">
-        <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">Partner</span>
-        <h3 class="font-heading text-2xl font-bold text-foreground tracking-[-0.5px]">Houston, TX</h3>
-        <p class="font-body text-sm text-muted-foreground leading-[1.7]">
-          Started in developer advocacy and web engineering, then moved into cloud platforms and infrastructure before going deep on AI. Has worked as a Field CTO, spoken at conferences on four continents, and built production systems for everything from arena operations to professional services firms.
-        </p>
-        <p class="font-body text-sm text-muted-foreground leading-[1.7]">
-          The kind of person who can explain a RAG pipeline to a CEO and then go build it.
-        </p>
-        <p class="font-heading text-[13px] font-semibold text-foreground leading-[1.5]">
-          AI strategy, agentic AI development, performance engineering, developer experience, technical training.
-        </p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+    <!-- Partner 1: Guillaume -->
+    <div class="flex flex-col border border-foreground">
+      <div class="grid md:grid-cols-2 h-full">
+        <div class="aspect-square md:aspect-auto bg-muted overflow-hidden">
+          <img src="/images/about/gmprofile.jpg" alt="Guillaume Moigneu" class="w-full h-full object-cover grayscale" />
+        </div>
+        <div class="flex flex-col gap-4 p-6">
+          <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">PARTNER — HOUSTON, TX</span>
+          <h3 class="font-heading text-xl font-bold text-foreground tracking-[-0.5px]">Guillaume Moigneu</h3>
+          <p class="font-body text-sm text-muted-foreground leading-[1.6]">
+            20+ years building the web. Started in developer advocacy and web engineering, then moved into cloud platforms and infrastructure before going deep on AI. Now Field CTO at Upsun.
+          </p>
+          <p class="font-body text-sm text-muted-foreground leading-[1.6]">
+            Spoken at conferences on four continents. The kind of person who can explain a RAG pipeline to a CEO and then go build it.
+          </p>
+          <p class="font-heading text-[13px] font-semibold text-foreground leading-[1.5] mt-auto">
+            AI strategy, agentic AI development, performance engineering, developer experience.
+          </p>
+        </div>
       </div>
     </div>
 
-    <!-- Partner 2: Manchester -->
-    <div class="flex flex-col border-2 border-foreground flex-1">
-      <div class="w-full h-[400px] bg-muted overflow-hidden">
-        <img src="/images/about/partner2.png" alt="Partner, Manchester, UK" class="w-full h-full object-cover" />
-      </div>
-      <div class="flex flex-col gap-5 p-8">
-        <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">Partner</span>
-        <h3 class="font-heading text-2xl font-bold text-foreground tracking-[-0.5px]">Manchester, UK</h3>
-        <p class="font-body text-sm text-muted-foreground leading-[1.7] italic">
-          Bio to be written. Same format as above. Should cover their background, experience areas, what they bring to the partnership, and a personal detail or two. Tone: warm, credible, human.
-        </p>
-        <p class="font-heading text-[13px] font-semibold text-foreground leading-[1.5] italic">
-          Specialties to be defined based on partner's background.
-        </p>
+    <!-- Partner 2: Greg -->
+    <div class="flex flex-col border border-foreground">
+      <div class="grid md:grid-cols-2 h-full">
+        <div class="aspect-square md:aspect-auto bg-muted overflow-hidden">
+          <img src="/images/about/gqprofile.jpg" alt="Greg Qualls" class="w-full h-full object-cover grayscale" />
+        </div>
+        <div class="flex flex-col gap-4 p-6">
+          <span class="font-heading text-[11px] font-semibold tracking-[2px] text-accent">PARTNER — MANCHESTER, UK</span>
+          <h3 class="font-heading text-xl font-bold text-foreground tracking-[-0.5px]">Greg Qualls</h3>
+          <p class="font-body text-sm text-muted-foreground leading-[1.6]">
+            20+ years working with businesses to transform how they operate. Spent the last several years going deep on AI products, systems, and technology helping organizations cut through the noise and implement solutions that actually move the needle.
+          </p>
+          <p class="font-body text-sm text-muted-foreground leading-[1.6]">
+            Brings a practical, business-first approach to AI. Doesn't care about the latest shiny tool only what actually creates value for your team and customers.
+          </p>
+          <p class="font-heading text-[13px] font-semibold text-foreground leading-[1.5] mt-auto">
+            AI product strategy, AI implementation, systems thinking, process optimization, change management.
+          </p>
+        </div>
       </div>
     </div>
   </div>
