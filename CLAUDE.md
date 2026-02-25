@@ -6,10 +6,26 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 number6.ai is a marketing website for an AI agency. Built with Astro 5 and React, deployed as a static site.
 
+## Repository Structure
+
+The repo is organized as a monorepo with the Astro website code in `website/`:
+
+```
+number6.ai/
+├── website/          # Astro site (source, config, build output)
+├── design/           # Design files (.pen)
+├── docs/             # Documentation
+├── openspec/         # OpenSpec artifacts
+├── assessment/       # AI readiness assessment
+└── CLAUDE.md
+```
+
 ## Commands
 
+All commands should be run from the `website/` directory:
+
 - `pnpm dev` — Start dev server at localhost:4321
-- `pnpm build` — Build production site to `./dist/`
+- `pnpm build` — Build production site to `./website/dist/`
 - `pnpm preview` — Preview production build locally
 - `pnpm astro add <integration>` — Add Astro integrations (e.g., react, tailwind, mdx)
 - `pnpm biome check --write` — Lint and format (auto-fix)
@@ -41,11 +57,11 @@ Use Context7 MCP for up-to-date Astro documentation.
 
 ### Astro Conventions
 
-- **Routing**: File-based. Files in `src/pages/` become routes automatically (`.astro`, `.md`, `.mdx`)
+- **Routing**: File-based. Files in `website/src/pages/` become routes automatically (`.astro`, `.md`, `.mdx`)
 - **Components**: Astro components (`.astro`) for static content, React components (`.tsx`) for interactive islands
-- **Layouts**: Shared page shells go in `src/layouts/`
-- **Static assets**: Place in `public/` (served at root path)
-- **Processed assets**: Import images/assets from `src/` for Astro's image optimization pipeline
+- **Layouts**: Shared page shells go in `website/src/layouts/`
+- **Static assets**: Place in `website/public/` (served at root path)
+- **Processed assets**: Import images/assets from `website/src/` for Astro's image optimization pipeline
 
 ### Astro + React (Islands Architecture)
 
@@ -64,13 +80,13 @@ A pre-commit hook runs **react-doctor** and **Biome** before every commit. Both 
 
 ### Homepage (`/`)
 Fully implemented with 12 sections matching the design in `design/number6.pen`:
-- **Layout**: `src/layouts/BaseLayout.astro` (shared Header + Footer + HTML shell + Google Fonts)
-- **Header**: `src/components/Header.astro` — dark bg, logo, nav, CTA
-- **Footer**: `src/components/Footer.astro` — dark bg, link columns, copyright
-- **Sections** (in `src/components/sections/`): Hero, TrustBar, TheProblem, WhatWeDo, HowWeWork, WhyNumber6, WhoItsFor, SocialProof, TheName, FinalCta
+- **Layout**: `website/src/layouts/BaseLayout.astro` (shared Header + Footer + HTML shell + Google Fonts)
+- **Header**: `website/src/components/Header.astro` — dark bg, logo, nav, CTA
+- **Footer**: `website/src/components/Footer.astro` — dark bg, link columns, copyright
+- **Sections** (in `website/src/components/sections/`): Hero, TrustBar, TheProblem, WhatWeDo, HowWeWork, WhyNumber6, WhoItsFor, SocialProof, TheName, FinalCta
 
 ### Theme
-Brand colors are defined as CSS custom properties in `src/styles/global.css`:
+Brand colors are defined as CSS custom properties in `website/src/styles/global.css`:
 - Background: `#F5F2ED` (warm off-white)
 - Foreground/Primary: `#1A1A1A` (dark)
 - Accent: `#C45A3B` (terracotta)

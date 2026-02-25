@@ -1,6 +1,6 @@
 ---
-import SchemaOrg from "@/components/SchemaOrg.astro";
 import RoiCalculator from "@/components/RoiCalculator";
+import SchemaOrg from "@/components/SchemaOrg.astro";
 import { business } from "@/data/business";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
@@ -8,7 +8,8 @@ const schema = {
 	"@context": "https://schema.org",
 	"@type": "WebPage",
 	name: "AI ROI Calculator",
-	description: "Calculate the return on investment for AI adoption in your SMB. See time savings, error reduction, quality improvements, and more.",
+	description:
+		"Calculate the return on investment for AI adoption in your SMB. See time savings, error reduction, quality improvements, and more.",
 	url: `${business.url}/roi-calculator`,
 };
 ---

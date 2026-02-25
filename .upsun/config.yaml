@@ -1,0 +1,63 @@
+# Upsun configuration, generated using AI at: 2026-02-25T14:59:43-06:00
+# AI can make mistakes. Please modify this file to suit your needs.
+applications:
+  website:
+    source:
+      root: website
+    type: nodejs:24
+    build:
+      flavor: none
+    hooks:
+      build: |
+        set -ex
+        pnpm install --frozen-lockfile --prod
+        pnpm run build
+    web:
+      commands:
+        start: sleep infinity
+      locations:
+        /:
+          root: dist
+          index: [index.html]
+          scripts: false
+          expires: 24h
+          rules:
+            '\.(css|js|gif|jpe?g|png|svg|webp)$':
+              expires: 4w
+    relationships:
+      database: {}
+  assessment:
+    source:
+      root: assessment
+    type: python:3.12
+    dependencies:
+      python3:
+        uv: "*"
+    build:
+      flavor: none
+    relationships:
+      database: database:mysql
+    hooks:
+      build: |
+        set -ex
+        uv sync --frozen --no-dev
+    web:
+      commands:
+        start: "uv run --no-sync uvicorn assessment_agent.main:app --reload --port $PORT --host 0.0.0.0"
+    # uv cache optimization
+    variables:
+      env:
+        uv_CACHE_DIR: "/tmp/uv-cache"
+        PYTHONPATH: "."
+
+services:
+  database:
+    type: postgresql:17
+
+routes:
+  https://{default}/:
+    type: upstream
+    upstream: website:http
+  https://assessment.{default}/:
+    type: upstream
+    upstream: assessment:http
