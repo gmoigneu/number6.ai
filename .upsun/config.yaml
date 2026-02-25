@@ -5,6 +5,9 @@ applications:
     source:
       root: website
     type: nodejs:24
+    dependencies:
+      nodejs:
+        pnpm: "*"
     build:
       flavor: none
     hooks:
