@@ -1,0 +1,146 @@
+---
+import SchemaOrg from "@/components/SchemaOrg.astro";
+import RoiCalculator from "@/components/RoiCalculator";
+import { business } from "@/data/business";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "WebPage",
+	name: "AI ROI Calculator",
+	description: "Calculate the return on investment for AI adoption in your SMB. See time savings, error reduction, quality improvements, and more.",
+	url: `${business.url}/roi-calculator`,
+};
+---
+
+<BaseLayout
+	title="AI ROI Calculator | number6.ai"
+	description="Calculate the return on investment for AI adoption in your SMB. See time savings, error reduction, quality improvements, and more."
+>
+	<Fragment slot="head">
+		<SchemaOrg schemas={[schema]} />
+	</Fragment>
+
+	<section class="py-16 lg:py-24">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
+				<h1 class="font-heading text-4xl lg:text-5xl font-bold tracking-[-1px] mb-4">
+					What's your potential AI ROI?
+				</h1>
+				<p class="font-body text-lg lg:text-xl text-muted-foreground">
+					See how much value AI could bring to your team. Based on real data from growing companies like yours.
+				</p>
+			</div>
+
+			<RoiCalculator client:visible />
+		</div>
+	</section>
+
+	<section class="py-16 lg:py-24 bg-muted/30">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="font-heading text-2xl font-bold tracking-[-0.5px] mb-6">
+					How we calculate ROI
+				</h2>
+				<p class="font-body text-muted-foreground mb-8 max-w-3xl">
+					Our calculations are based on published research from industry sources. 
+					We believe in transparent pricing—and transparent math.
+				</p>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 font-body">
+					<div>
+						<h3 class="font-semibold text-foreground mb-3">Time Savings</h3>
+						<p class="text-sm text-muted-foreground mb-2">
+							Based on 73% of SMBs reporting time savings from AI (business.com). 
+							We use 2.2 hours/week average from SMB studies.
+						</p>
+						<a 
+							href="https://www.business.com/articles/ai-usage-smb-workplace-study/" 
+							target="_blank" 
+							rel="noopener noreferrer"
+							class="text-sm text-[#C45A3B] hover:underline"
+						>
+							Source: business.com
+						</a>
+					</div>
+					<div>
+						<h3 class="font-semibold text-foreground mb-3">Error Reduction</h3>
+						<p class="text-sm text-muted-foreground mb-2">
+							Accounts for the reality that 40% of AI time savings is lost to rework (Workday). 
+							We estimate 50% net error reduction after verification.
+						</p>
+						<a 
+							href="https://erp.today/workday-research-finds-ai-productivity-gains-are-lost-to-rework/" 
+							target="_blank" 
+							rel="noopener noreferrer"
+							class="text-sm text-[#C45A3B] hover:underline"
+						>
+							Source: Workday Study
+						</a>
+					</div>
+					<div>
+						<h3 class="font-semibold text-foreground mb-3">Quality Uplift</h3>
+						<p class="text-sm text-muted-foreground mb-2">
+							Based on 14-55% task-level productivity gains (Forbes). We use a conservative 10%.
+						</p>
+						<a 
+							href="https://www.forbes.com/sites/guneyyildiz/2026/01/20/ai-productivitys-4-trillion-question-hype-hope-and-hard-data/" 
+							target="_blank" 
+							rel="noopener noreferrer"
+							class="text-sm text-[#C45A3B] hover:underline"
+						>
+							Source: Forbes
+						</a>
+					</div>
+					<div>
+						<h3 class="font-semibold text-foreground mb-3">Decision Speed</h3>
+						<p class="text-sm text-muted-foreground mb-2">
+							Based on 60% of SMBs reporting AI improves decision-making (business.com). 
+							We estimate 2 days/month saved for decision-makers.
+						</p>
+					</div>
+					<div>
+						<h3 class="font-semibold text-foreground mb-3">Employee Experience</h3>
+						<p class="text-sm text-muted-foreground mb-2">
+							Based on 60% of employees feeling more job satisfaction with AI (business.com). 
+							We estimate 5% reduction in turnover risk.
+						</p>
+					</div>
+					<div>
+						<h3 class="font-semibold text-foreground mb-3">Key Benchmarks</h3>
+						<ul class="text-sm text-muted-foreground space-y-1 mb-2">
+							<li>• 73% of SMBs save time with AI</li>
+							<li>• 58% save 20+ hours/month</li>
+							<li>• 91% see revenue growth</li>
+							<li>• 3.7x average ROI</li>
+						</ul>
+						<a 
+							href="https://www.salesforce.com/news/stories/smbs-ai-trends-2025/" 
+							target="_blank" 
+							rel="noopener noreferrer"
+							class="text-sm text-[#C45A3B] hover:underline"
+						>
+							Source: Salesforce
+						</a>
+					</div>
+				</div>
+				
+				<div class="mt-8 pt-6 border-t border-[#E8E4DD]">
+					<p class="text-sm text-muted-foreground italic">
+						Note: These are estimates based on industry research. Your actual results will vary based on 
+						implementation quality, team adoption, and specific use cases. The median SMB saves $7,500/year 
+						on AI investments of ~$1,800 (Dialzara study).
+					</p>
+					<a 
+						href="https://dialzara.com/blog/measuring-roi-of-ai-in-smb-growth" 
+						target="_blank" 
+						rel="noopener noreferrer"
+						class="text-sm text-[#C45A3B] hover:underline"
+					>
+						Source: Dialzara SMB Study
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
