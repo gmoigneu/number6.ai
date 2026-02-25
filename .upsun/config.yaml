@@ -36,7 +36,7 @@ applications:
     build:
       flavor: none
     relationships:
-      database: database:mysql
+      database:
     hooks:
       build: |
         set -ex
