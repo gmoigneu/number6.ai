@@ -1,0 +1,112 @@
+---
+import { ArrowDown, BarChart3, Clock, Lightbulb, Target } from "lucide-react";
+import SchemaOrg from "@/components/SchemaOrg.astro";
+import AssessmentChatbot from "@/components/sections/assessment/AssessmentChatbot";
+import { business } from "@/data/business";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	itemListElement: [
+		{
+			"@type": "ListItem",
+			position: 1,
+			name: "Home",
+			item: business.url,
+		},
+		{
+			"@type": "ListItem",
+			position: 2,
+			name: "AI Readiness Assessment",
+			item: `${business.url}/assessment/`,
+		},
+	],
+};
+
+const webAppSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebApplication",
+	name: "AI Readiness Assessment",
+	description:
+		"Evaluate your organisation's AI readiness across four key dimensions and get a personalised report with actionable recommendations.",
+	url: `${business.url}/assessment/`,
+	applicationCategory: "BusinessApplication",
+	provider: {
+		"@type": "Organization",
+		name: business.name,
+		url: business.url,
+	},
+};
+---
+
+<BaseLayout
+  title="AI Readiness Assessment | Number6"
+  description="Take our free 5-minute AI readiness assessment. Get a personalised score across four dimensions and actionable recommendations for your organisation."
+>
+  <Fragment slot="head">
+    <SchemaOrg schemas={[breadcrumbSchema, webAppSchema]} />
+  </Fragment>
+
+  <!-- Introduction section -->
+  <section class="bg-background py-20 md:py-28 px-5 md:px-16">
+    <div class="max-w-[720px] mx-auto">
+      <p class="font-heading text-xs font-semibold tracking-[2px] text-accent uppercase mb-4">
+        AI Readiness Assessment
+      </p>
+      <h1 class="font-heading text-[32px] md:text-[48px] font-bold text-foreground leading-[1.1] tracking-[-1.5px] mb-6">
+        How ready is your<br />organisation for AI?
+      </h1>
+      <p class="font-body text-base md:text-lg text-foreground/70 leading-relaxed mb-8 max-w-[560px]">
+        Our AI agent will guide you through a quick conversation to evaluate
+        where you stand and what steps to take next. No forms, no fluff.
+      </p>
+
+      <div class="flex flex-wrap gap-6 mb-8">
+        <div class="flex items-center gap-2 text-accent">
+          <Clock className="w-4 h-4" />
+          <span class="font-heading text-sm font-semibold">~5 minutes</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+        <div class="flex items-start gap-3">
+          <BarChart3 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+          <div>
+            <p class="font-heading text-sm font-semibold text-foreground">Personalised score</p>
+            <p class="font-body text-xs text-foreground/60">Across four key dimensions</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <Target className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+          <div>
+            <p class="font-heading text-sm font-semibold text-foreground">Dimension breakdown</p>
+            <p class="font-body text-xs text-foreground/60">Data, process, team, strategy</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <Lightbulb className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+          <div>
+            <p class="font-heading text-sm font-semibold text-foreground">Actionable recommendations</p>
+            <p class="font-body text-xs text-foreground/60">Tailored to your context</p>
+          </div>
+        </div>
+      </div>
+
+      <a
+        href="#chat"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-heading text-sm font-semibold tracking-wide rounded-md hover:bg-accent/90 transition-colors"
+      >
+        Start the assessment
+        <ArrowDown className="w-4 h-4" />
+      </a>
+    </div>
+  </section>
+
+  <!-- Chat section -->
+  <section id="chat" class="bg-background pb-16 md:pb-24 px-5 md:px-16 scroll-mt-8">
+    <div class="max-w-[720px] mx-auto">
+      <AssessmentChatbot client:load />
+    </div>
+  </section>
+</BaseLayout>

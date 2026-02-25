@@ -1,0 +1,25 @@
+Defense-in-depth architecture
+=============================
+
+User Input
+    |
+[Layer 1] Regex input filter         -- blocks known attack patterns pre-LLM
+    |                                    (9 patterns, microseconds, zero cost)
+    |
+[Layer 2] Random sequence enclosure  -- wraps user text in unique boundary tokens
+    |                                    (new 16-byte hex token per message)
+    |
+[Layer 3] Hardened system prompt      -- few-shot inoculation with rejection examples
+    |                                    (3 attack/response pairs + 6 security rules)
+    |
+[Layer 4] Sandwich defense            -- closing system reminder after user message
+    |                                    (model sees instructions before AND after input)
+    v
+  OpenAI API (gpt-4o-mini)
+    |
+[Layer 5] Output leak detection       -- n-gram overlap check against system prompt
+    |                                    (12% threshold, character-level 5-grams)
+    v
+Validated Response
+
+Each layer is independent. If one fails, the others still provide protection.
