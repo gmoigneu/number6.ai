@@ -24,8 +24,6 @@ applications:
           rules:
             '\.(css|js|gif|jpe?g|png|svg|webp)$':
               expires: 4w
-    relationships:
-      database: {}
   assessment:
     source:
       root: assessment
