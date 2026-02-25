@@ -89,9 +89,7 @@ export default function NewsletterForm() {
 					)}
 				</button>
 			</form>
-			{errorMsg && (
-				<p className="font-body text-xs text-red-400">{errorMsg}</p>
-			)}
+			{errorMsg && <p className="font-body text-xs text-red-400">{errorMsg}</p>}
 			{formState === "error" && (
 				<p className="font-body text-xs text-red-400">
 					Something went wrong. Please try again.

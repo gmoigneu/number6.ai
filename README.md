@@ -5,6 +5,7 @@ Marketing website for Number 6, an AI agency. Built with Astro 5 and React, depl
 ## Setup
 
 ```sh
+cd website
 pnpm install
 ```
 
@@ -13,6 +14,7 @@ pnpm install
 With portless (preferred):
 
 ```sh
+cd website
 portless number6 pnpm dev
 ```
 
@@ -21,12 +23,15 @@ This makes the site available at `http://number6.localhost:1355`.
 Without portless:
 
 ```sh
+cd website
 pnpm dev
 ```
 
 Available at `http://localhost:4321`.
 
 ## Commands
+
+All commands run from the `website/` directory:
 
 | Command        | Action                                    |
 | :------------- | :---------------------------------------- |
